@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lily Holmes | Writings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-[var(--color-page)] text-[var(--color-text)] antialiased">
+    <header class="border-b border-[var(--color-border)] bg-[var(--color-nav)]">
+      <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
+        <a class="text-base font-semibold tracking-wide text-[var(--color-heading)]" href="index.html">Lily Holmes</a>
+        <div class="flex items-center gap-5 text-sm font-medium text-[var(--color-text-muted)]">
+          <a class="hover:text-[var(--color-link-hover)]" href="index.html#projects">Projects</a>
+          <a class="hover:text-[var(--color-link-hover)]" href="index.html#skills">Skills</a>
+          <a class="font-semibold text-[var(--color-heading)]" href="writings.html">Writings</a>
+          <a class="hover:text-[var(--color-link-hover)]" href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="mx-auto max-w-5xl px-6 py-16">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">
+          Notes & Essays
+        </p>
+        <h1 class="hero-heading max-w-3xl text-4xl font-bold leading-tight md:text-5xl">
+          Writings on data, methods, and careful analysis.
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-text-muted)]">
+          A small archive for papers, project writeups, reflections, and longer-form notes
+          on statistical judgment, reproducible work, and applied data science.
+        </p>
+      </section>
+
+      <section class="border-y border-[var(--color-border)] bg-[var(--color-surface)] py-12">
+        <div class="mx-auto max-w-5xl space-y-4 px-6">
+          <details class="writing-panel archive-card-muted rounded-lg p-5 shadow-sm">
+            <summary class="flex items-center justify-between gap-4">
+              <span>
+                <span class="archive-title block text-lg font-semibold">Project Writeup Title</span>
+                <span class="archive-muted mt-1 block text-sm">Short description, course paper, or publication context.</span>
+              </span>
+            </summary>
+            <div class="mt-5 border-t border-[var(--color-border)] pt-5">
+              <p class="archive-muted text-sm leading-6">
+                A concise abstract or plain-language summary can live here, giving readers
+                the question, approach, and main takeaway before they open the full piece.
+              </p>
+              <div class="mt-5 overflow-hidden rounded-md">
+                <iframe class="pdf-frame" src="about:blank" title="Project writeup PDF"></iframe>
+              </div>
+            </div>
+          </details>
+
+          <details class="writing-panel archive-card-muted rounded-lg p-5 shadow-sm">
+            <summary class="flex items-center justify-between gap-4">
+              <span>
+                <span class="archive-title block text-lg font-semibold">Methods Reflection</span>
+                <span class="archive-muted mt-1 block text-sm">A shorter note on modeling choices, uncertainty, or interpretation.</span>
+              </span>
+            </summary>
+            <div class="mt-5 border-t border-[var(--color-border)] pt-5">
+              <p class="archive-muted text-sm leading-6">
+                A brief reflection on model choice, assumptions, uncertainty, or interpretation.
+                This is a good place for shorter writing that does not need a separate PDF.
+              </p>
+            </div>
+          </details>
+
+          <details class="writing-panel archive-card-muted rounded-lg p-5 shadow-sm">
+            <summary class="flex items-center justify-between gap-4">
+              <span>
+                <span class="archive-title block text-lg font-semibold">Reading Notes</span>
+                <span class="archive-muted mt-1 block text-sm">Selected notes from papers, books, or technical references.</span>
+              </span>
+            </summary>
+            <div class="mt-5 border-t border-[var(--color-border)] pt-5">
+              <p class="archive-muted text-sm leading-6">
+                Selected notes from technical reading, with emphasis on concepts that changed
+                how I think about data, evidence, and communication.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-[var(--color-border)] bg-[var(--color-surface-muted)] px-6 py-8 text-[var(--color-text)]">
+      <div class="mx-auto flex max-w-5xl flex-col justify-between gap-4 sm:flex-row sm:items-center">
+        <p class="archive-muted text-sm">Lily Holmes</p>
+        <a class="archive-link text-sm font-semibold" href="index.html">Back to portfolio</a>
+      </div>
+    </footer>
+  </body>
+</html>

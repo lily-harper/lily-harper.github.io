@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lily Holmes | Data Science Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-[var(--color-page)] text-[var(--color-text)] antialiased">
+    <header class="border-b border-[var(--color-border)] bg-[var(--color-nav)]">
+      <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
+        <a class="text-base font-semibold tracking-wide text-[var(--color-heading)]" href="#">Lily Holmes</a>
+        <div class="flex items-center gap-5 text-sm font-medium text-[var(--color-text-muted)]">
+          <a class="hover:text-[var(--color-link-hover)]" href="#projects">Projects</a>
+          <a class="hover:text-[var(--color-link-hover)]" href="#skills">Skills</a>
+          <a class="hover:text-[var(--color-link-hover)]" href="writings.html">Writings</a>
+          <a class="hover:text-[var(--color-link-hover)]" href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="mx-auto grid max-w-5xl gap-10 px-6 py-16 md:grid-cols-[1.4fr_0.8fr] md:items-center">
+        <div>
+          <p class="mb-4 text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">
+            Entry-Level Data Scientist
+          </p>
+          <h1 class="hero-heading max-w-3xl text-4xl font-bold leading-tight md:text-5xl">
+            Interested in thoughtful, purposeful, and reproducible analysis.
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-text-muted)]">
+            Hi, I'm Lily, a master's student in Data Science at CU Boulder. I studied Economics and 
+            History at the University of Nebraska-Lincoln.
+
+            I like integrating Machine/Statistical Learning into projects relating cultural and urban analysis.  
+            
+            I care about thoughtful statistical judgment, clean communication,
+             and analysis that other
+            people can understand, reproduce, and build on.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a
+              class="rounded-md bg-[var(--color-button)] px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[var(--color-button-hover)]"
+              href="#projects"
+            >
+              View Projects
+            </a>
+            <a
+              class="rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-3 text-sm font-semibold text-[var(--color-link)] hover:border-[var(--color-accent)] hover:text-[var(--color-link-hover)]"
+              href="https://www.linkedin.com/in/lilyharperholmes/"
+            >
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <aside class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-sm">
+          <h2 class="text-sm font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">Focus Areas</h2>
+          <ul class="mt-5 space-y-4 text-sm leading-6 text-[var(--color-text-muted)]">
+            <li>
+              <span class="font-semibold text-[var(--color-heading)]">Analysis:</span>
+              exploratory data analysis, statistical modeling, and evaluation.
+            </li>
+            <li>
+              <span class="font-semibold text-[var(--color-heading)]">Tools:</span>
+              Python, R, SQL, notebooks, Git, and reproducible workflows.
+            </li>
+            <li>
+              <span class="font-semibold text-[var(--color-heading)]">Communication:</span>
+              clean visualizations, concise summaries, and project documentation.
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section id="projects" class="border-y border-[var(--color-border)] bg-[var(--color-surface)] py-14">
+        <div class="mx-auto max-w-5xl px-6">
+          <div class="mb-8 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">Selected Work</p>
+              <h2 class="archive-heading mt-2 text-3xl font-bold">Projects</h2>
+            </div>
+            <a class="text-sm font-semibold text-[var(--color-link)] hover:text-[var(--color-link-hover)]" href="https://github.com/lily-harper">
+              GitHub: lily-harper
+            </a>
+          </div>
+          <div id="projects-list" class="grid gap-5 md:grid-cols-3"></div>
+        </div>
+      </section>
+
+      <section id="skills" class="mx-auto max-w-5xl px-6 py-14">
+        <p class="text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">Toolkit</p>
+        <h2 class="archive-heading mt-2 text-3xl font-bold">Skills</h2>
+        <div id="skills-list" class="mt-8 grid gap-5 md:grid-cols-3"></div>
+      </section>
+
+      <section class="border-t border-[var(--color-border)] bg-[var(--color-surface)] py-14">
+        <div class="mx-auto max-w-5xl px-6">
+          <p class="text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">Background</p>
+          <h2 class="archive-heading mt-2 text-3xl font-bold">Education & Experience</h2>
+          <div id="experience-list" class="mt-8 space-y-4"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="border-t border-[var(--color-border)] bg-[var(--color-surface-muted)] px-6 py-10 text-[var(--color-text)]">
+      <div class="mx-auto flex max-w-5xl flex-col justify-between gap-6 sm:flex-row sm:items-center">
+        <div>
+          <h2 class="archive-heading text-xl font-semibold">Let's connect.</h2>
+          <p class="mt-2 max-w-xl text-sm leading-6 text-[var(--color-text-muted)]">
+            Open to entry-level data science/analytics roles, internships, collaborations, and 
+            conversations about data.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3 text-sm font-semibold">
+          <a class="rounded-md bg-[var(--color-button)] px-4 py-2 text-white hover:bg-[var(--color-button-hover)]" href="mailto:your.email@example.com">
+            Email
+          </a>
+          <a class="rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-[var(--color-link)] hover:border-[var(--color-accent)] hover:text-[var(--color-link-hover)]" href="https://github.com/lily-harper">
+            GitHub
+          </a>
+          <a class="rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-[var(--color-link)] hover:border-[var(--color-accent)] hover:text-[var(--color-link-hover)]" href="https://www.linkedin.com/in/lilyharperholmes/">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="things.js"></script>
+  </body>
+</html>

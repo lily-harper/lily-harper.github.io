@@ -1,0 +1,109 @@
+:root {
+  --color-page: #f5efe3;
+  --color-surface: #fffaf1;
+  --color-surface-muted: #eee4d3;
+  --color-border: #d9cbb7;
+  --color-text: #2f2a25;
+  --color-text-muted: #6b6258;
+  --color-heading: #3b2418;
+  --color-accent: #9a6f32;
+  --color-link: #40576a;
+  --color-link-hover: #263948;
+  --color-button: #4a3325;
+  --color-button-hover: #342319;
+  --color-nav: #d9cbb7;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.archive-heading {
+  color: var(--color-heading);
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0;
+}
+
+.hero-heading {
+  color: var(--color-heading);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+.archive-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.archive-card-muted {
+  background: var(--color-page);
+  border: 1px solid var(--color-border);
+}
+
+.archive-title {
+  color: var(--color-heading);
+}
+
+.archive-muted {
+  color: var(--color-text-muted);
+}
+
+.archive-link {
+  color: var(--color-link);
+}
+
+.archive-link:hover {
+  color: var(--color-link-hover);
+}
+
+.archive-tag {
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.archive-accent {
+  color: var(--color-accent);
+}
+
+.writing-panel summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.writing-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.writing-panel summary::after {
+  color: var(--color-accent);
+  content: "+";
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.writing-panel[open] summary::after {
+  content: "-";
+}
+
+.pdf-frame {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  min-height: 32rem;
+  width: 100%;
+}
+
+.resume-frame {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  min-height: 42rem;
+  width: 100%;
+}

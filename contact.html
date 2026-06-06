@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lily Holmes | Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-[var(--color-page)] text-[var(--color-text)] antialiased">
+    <header class="border-b border-[var(--color-border)] bg-[var(--color-nav)]">
+      <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
+        <a class="text-base font-semibold tracking-wide text-[var(--color-heading)]" href="index.html">Lily Holmes</a>
+        <div class="flex items-center gap-5 text-sm font-medium text-[var(--color-text-muted)]">
+          <a class="hover:text-[var(--color-link-hover)]" href="index.html#projects">Projects</a>
+          <a class="hover:text-[var(--color-link-hover)]" href="index.html#skills">Skills</a>
+          <a class="hover:text-[var(--color-link-hover)]" href="writings.html">Writings</a>
+          <a class="font-semibold text-[var(--color-heading)]" href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="mx-auto max-w-5xl px-6 py-16">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">
+          Contact & Resume
+        </p>
+        <h1 class="hero-heading max-w-3xl text-4xl font-bold leading-tight md:text-5xl">
+          More ways to connect.
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-text-muted)]">
+          I am open to entry-level data science and analytics roles, internships,
+          collaborations, and conversations about thoughtful applied analysis.
+        </p>
+      </section>
+
+      <section class="border-y border-[var(--color-border)] bg-[var(--color-surface)] py-12">
+        <div class="mx-auto grid max-w-5xl gap-6 px-6 lg:grid-cols-[0.85fr_1.15fr]">
+          <section class="archive-card-muted rounded-lg p-6 shadow-sm">
+            <h2 class="archive-heading text-2xl font-bold">Contact Information</h2>
+            <dl class="mt-6 space-y-5">
+              <div>
+                <dt class="text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">Email</dt>
+                <dd class="mt-1">
+                  <a class="archive-link text-sm font-semibold" href="mailto:your.email@example.com">
+                    your.email@example.com
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt class="text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">LinkedIn</dt>
+                <dd class="mt-1">
+                  <a class="archive-link text-sm font-semibold" href="https://www.linkedin.com/in/lilyharperholmes/">
+                    linkedin.com/in/lilyharperholmes
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt class="text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">GitHub</dt>
+                <dd class="mt-1">
+                  <a class="archive-link text-sm font-semibold" href="https://github.com/lily-harper">
+                    github.com/lily-harper
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt class="text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">Location</dt>
+                <dd class="archive-muted mt-1 text-sm">Boulder, Colorado</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="archive-card-muted rounded-lg p-6 shadow-sm">
+            <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
+              <div>
+                <h2 class="archive-heading text-2xl font-bold">Resume</h2>
+                <p class="archive-muted mt-2 text-sm leading-6">
+                  Current resume with selected coursework, project experience, and technical skills.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-3 text-sm font-semibold">
+                <a class="rounded-md bg-[var(--color-button)] px-4 py-2 text-white hover:bg-[var(--color-button-hover)]" href="assets/resume.pdf">
+                  Open PDF
+                </a>
+                <a class="rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-[var(--color-link)] hover:border-[var(--color-accent)] hover:text-[var(--color-link-hover)]" href="assets/resume.pdf" download>
+                  Download
+                </a>
+              </div>
+            </div>
+            <div class="mt-6 overflow-hidden rounded-md">
+              <iframe class="resume-frame" src="assets/resume.pdf" title="Lily Holmes resume"></iframe>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-[var(--color-border)] bg-[var(--color-surface-muted)] px-6 py-8 text-[var(--color-text)]">
+      <div class="mx-auto flex max-w-5xl flex-col justify-between gap-4 sm:flex-row sm:items-center">
+        <p class="archive-muted text-sm">Lily Holmes</p>
+        <a class="archive-link text-sm font-semibold" href="index.html">Back to portfolio</a>
+      </div>
+    </footer>
+  </body>
+</html>
