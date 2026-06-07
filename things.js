@@ -2,24 +2,30 @@ const portfolio = {
   projects: [
     {
       title: "Soul Meets Body meets NLP",
+      subtitle: "Natural language processing on lyrics",
       summary:
-        "Built and evaluated a supervised learning model, compared baselines, and explained tradeoffs using clear metrics.",
-      tools: ["Python", "scikit-learn", "pandas"],
-      link: "https://github.com/lily-harper",
+        "Basic NLP techniques on lyrics written by Benjamin Gibbard. Built and evaluated an unsupervised learning model",
+      methods: ["NLP", "Text preprocessing", "Clustering"],
+      tools: ["Python", "nltk", "pandas"],
+      link: "projects.html#soul-meets-body-nlp",
     },
     {
-      title: "Exploratory Data Analysis",
+      title: "Motor Vehicle Accident Injury Classifier",
+      subtitle: "Applied classifiers",
       summary:
-        "Cleaned a real-world dataset, identified patterns, and created visual summaries for a non-technical audience.",
-      tools: ["R", "ggplot2", "Quarto"],
-      link: "https://github.com/lily-harper",
+        "Cleaned a real-world dataset, identified patterns",
+      methods: ["Classification", "Data cleaning", "Model evaluation"],
+      tools: ["Python", "sklearn"],
+      link: "projects.html#accident-injury-classifier",
     },
     {
       title: "Data Dashboard",
+      subtitle: "Interactive reporting",
       summary:
         "Designed a lightweight dashboard to track key measures and make trends easier to scan over time.",
+      methods: ["Dashboard design", "Trend analysis", "Reporting"],
       tools: ["SQL", "Tableau", "Excel"],
-      link: "https://github.com/lily-harper",
+      link: "projects.html#data-dashboard",
     },
   ],
   skills: [
@@ -29,7 +35,7 @@ const portfolio = {
     },
     {
       category: "Data Science",
-      items: ["EDA", "Regression", "Classification", "Model evaluation", "A/B testing basics"],
+      items: ["EDA", "Regression", "Classification", "Model evaluation basics"],
     },
     {
       category: "Communication",
@@ -39,10 +45,17 @@ const portfolio = {
   experience: [
     {
       role: "M.S. Data Science",
-      organization: "University of Colorado Boulder",
-      date: "Expected 2026",
+      organization: "University of Colorado-Boulder",
+      date: "Expected May 2027",
       description:
-        "Coursework in statistics, machine learning, data engineering, and applied analytics.",
+        "Coursework in statistics, machine learning, data mining, and applied analytics.",
+    },
+    {
+      role: "B.A. Economics & History",
+      organization: "University of Nebraska-Lincoln",
+      date: "",
+      description:
+        "Coursework in economics, intro econometrics, and history. Minor in Art History & Criticism",
     },
     {
       role: "Portfolio Project Work",
@@ -54,22 +67,43 @@ const portfolio = {
   ],
 };
 
-function tagList(items) {
+function tagList(items, className = "archive-tag") {
   return items
     .map(
       (item) =>
-        `<span class="archive-tag rounded px-2 py-1 text-xs font-medium">${item}</span>`
+        `<span class="${className} rounded px-2 py-1 text-xs font-medium">${item}</span>`
     )
     .join("");
+}
+
+function chipSection(label, items, className) {
+  if (!items || items.length === 0) {
+    return "";
+  }
+
+  return `
+    <div class="mt-4">
+      <p class="archive-muted mb-2 text-xs font-semibold uppercase tracking-wider">${label}</p>
+      <div class="flex flex-wrap gap-2">${tagList(items, className)}</div>
+    </div>
+  `;
 }
 
 document.getElementById("projects-list").innerHTML = portfolio.projects
   .map(
     (project) => `
       <article class="archive-card-muted rounded-lg p-5 shadow-sm">
-        <h3 class="archive-title text-lg font-semibold">${project.title}</h3>
+        <h3 class="text-lg font-semibold">
+          <a class="archive-title hover:text-[var(--color-link-hover)]" href="${project.link}">${project.title}</a>
+        </h3>
+        ${
+          project.subtitle
+            ? `<p class="archive-accent mt-1 text-xs font-semibold uppercase tracking-wider">${project.subtitle}</p>`
+            : ""
+        }
         <p class="archive-muted mt-3 text-sm leading-6">${project.summary}</p>
-        <div class="mt-4 flex flex-wrap gap-2">${tagList(project.tools)}</div>
+        ${chipSection("Methods", project.methods, "archive-method-tag")}
+        ${chipSection("Tools", project.tools, "archive-tag")}
         <a class="archive-link mt-5 inline-block text-sm font-semibold" href="${project.link}">
           View project
         </a>

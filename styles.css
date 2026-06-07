@@ -12,6 +12,7 @@
   --color-button: #4a3325;
   --color-button-hover: #342319;
   --color-nav: #d9cbb7;
+  --color-method-tag: #efe0c0;
 
 }
 
@@ -69,20 +70,29 @@ body {
   color: var(--color-text);
 }
 
+.archive-method-tag {
+  background: var(--color-method-tag);
+  border: 1px solid var(--color-border);
+  color: var(--color-heading);
+}
+
 .archive-accent {
   color: var(--color-accent);
 }
 
-.writing-panel summary {
+.writing-panel summary,
+.detail-panel summary {
   cursor: pointer;
   list-style: none;
 }
 
-.writing-panel summary::-webkit-details-marker {
+.writing-panel summary::-webkit-details-marker,
+.detail-panel summary::-webkit-details-marker {
   display: none;
 }
 
-.writing-panel summary::after {
+.writing-panel summary::after,
+.detail-panel summary::after {
   color: var(--color-accent);
   content: "+";
   font-size: 1.25rem;
@@ -90,7 +100,8 @@ body {
   line-height: 1;
 }
 
-.writing-panel[open] summary::after {
+.writing-panel[open] summary::after,
+.detail-panel[open] summary::after {
   content: "-";
 }
 

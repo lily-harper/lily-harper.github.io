@@ -12,7 +12,7 @@
       <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
         <a class="text-base font-semibold tracking-wide text-[var(--color-heading)]" href="index.html">Lily Holmes</a>
         <div class="flex items-center gap-5 text-sm font-medium text-[var(--color-text-muted)]">
-          <a class="hover:text-[var(--color-link-hover)]" href="index.html#projects">Projects</a>
+          <a class="hover:text-[var(--color-link-hover)]" href="projects.html">Projects</a>
           <a class="hover:text-[var(--color-link-hover)]" href="index.html#skills">Skills</a>
           <a class="font-semibold text-[var(--color-heading)]" href="writings.html">Writings</a>
           <a class="hover:text-[var(--color-link-hover)]" href="contact.html">Contact</a>
@@ -22,15 +22,13 @@
 
     <main>
       <section class="mx-auto max-w-5xl px-6 py-16">
-        <p class="mb-4 text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">
-          Notes & Essays
-        </p>
+        <p class="mb-4 text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">Writings / Notes</p>
         <h1 class="hero-heading max-w-3xl text-4xl font-bold leading-tight md:text-5xl">
           Writings on data, methods, and careful analysis.
         </h1>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-text-muted)]">
-          A small archive for papers, project writeups, reflections, and longer-form notes
-          on statistical judgment, reproducible work, and applied data science.
+          Short reflections on statistical judgment, reproducible work, applied data science,
+          and the kinds of questions that sit between technical work and interpretation.
         </p>
       </section>
 
@@ -38,48 +36,60 @@
         <div class="mx-auto max-w-5xl space-y-4 px-6">
           <details class="writing-panel archive-card-muted rounded-lg p-5 shadow-sm">
             <summary class="flex items-center justify-between gap-4">
-              <span>
-                <span class="archive-title block text-lg font-semibold">Project Writeup Title</span>
-                <span class="archive-muted mt-1 block text-sm">Short description, course paper, or publication context.</span>
-              </span>
-            </summary>
-            <div class="mt-5 border-t border-[var(--color-border)] pt-5">
-              <p class="archive-muted text-sm leading-6">
-                A concise abstract or plain-language summary can live here, giving readers
-                the question, approach, and main takeaway before they open the full piece.
-              </p>
-              <div class="mt-5 overflow-hidden rounded-md">
-                <iframe class="pdf-frame" src="about:blank" title="Project writeup PDF"></iframe>
+              <div>
+                <h2 class="archive-title text-lg font-semibold">What Makes an Analysis Reproducible?</h2>
+                <p class="archive-muted mt-1 text-sm">Methods note · Draft</p>
               </div>
-            </div>
-          </details>
-
-          <details class="writing-panel archive-card-muted rounded-lg p-5 shadow-sm">
-            <summary class="flex items-center justify-between gap-4">
-              <span>
-                <span class="archive-title block text-lg font-semibold">Methods Reflection</span>
-                <span class="archive-muted mt-1 block text-sm">A shorter note on modeling choices, uncertainty, or interpretation.</span>
-              </span>
             </summary>
             <div class="mt-5 border-t border-[var(--color-border)] pt-5">
               <p class="archive-muted text-sm leading-6">
-                A brief reflection on model choice, assumptions, uncertainty, or interpretation.
-                This is a good place for shorter writing that does not need a separate PDF.
+                Reproducibility is not only about whether code runs. It also depends on whether
+                the assumptions, data cleaning choices, model comparisons, and limitations are
+                visible enough for someone else to follow the path from question to conclusion.
+              </p>
+              <p class="archive-muted mt-4 text-sm leading-6">
+                This post can expand into a short reflection on notebooks, project structure,
+                documentation, and the difference between polished results and transparent work.
               </p>
             </div>
           </details>
 
           <details class="writing-panel archive-card-muted rounded-lg p-5 shadow-sm">
             <summary class="flex items-center justify-between gap-4">
-              <span>
-                <span class="archive-title block text-lg font-semibold">Reading Notes</span>
-                <span class="archive-muted mt-1 block text-sm">Selected notes from papers, books, or technical references.</span>
-              </span>
+              <div>
+                <h2 class="archive-title text-lg font-semibold">Model Accuracy Is Not the Whole Story</h2>
+                <p class="archive-muted mt-1 text-sm">Modeling reflection · Draft</p>
+              </div>
             </summary>
             <div class="mt-5 border-t border-[var(--color-border)] pt-5">
               <p class="archive-muted text-sm leading-6">
-                Selected notes from technical reading, with emphasis on concepts that changed
-                how I think about data, evidence, and communication.
+                Accuracy can be useful, but it rarely explains whether a model is appropriate.
+                A careful analysis should ask what errors matter, who is affected by those errors,
+                and whether the model is actually answering the original question.
+              </p>
+              <p class="archive-muted mt-4 text-sm leading-6">
+                This post can connect classification metrics, baseline models, interpretability,
+                and practical judgment in entry-level data science projects.
+              </p>
+            </div>
+          </details>
+
+          <details class="writing-panel archive-card-muted rounded-lg p-5 shadow-sm">
+            <summary class="flex items-center justify-between gap-4">
+              <div>
+                <h2 class="archive-title text-lg font-semibold">Reading Notes on Data and Culture</h2>
+                <p class="archive-muted mt-1 text-sm">Reading notes · Draft</p>
+              </div>
+            </summary>
+            <div class="mt-5 border-t border-[var(--color-border)] pt-5">
+              <p class="archive-muted text-sm leading-6">
+                Selected notes from technical and humanistic reading, especially work that
+                changes how I think about evidence, cities, culture, classification, and
+                communication.
+              </p>
+              <p class="archive-muted mt-4 text-sm leading-6">
+                This can become a lightweight blog series where each accordion is one post
+                rather than a separate page.
               </p>
             </div>
           </details>
