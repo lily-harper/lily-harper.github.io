@@ -9,11 +9,11 @@
   </head>
   <body class="bg-[var(--color-page)] text-[var(--color-text)] antialiased">
     <header class="border-b border-[var(--color-border)] bg-[var(--color-nav)]">
-      <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
         <a class="text-base font-semibold tracking-wide text-[var(--color-heading)]" href="index.html">Lily Holmes</a>
         <div class="flex items-center gap-5 text-sm font-medium text-[var(--color-text-muted)]">
+          <a class="hover:text-[var(--color-link-hover)]" href="index.html">Home</a>
           <a class="font-semibold text-[var(--color-heading)]" href="projects.html">Projects</a>
-          <a class="hover:text-[var(--color-link-hover)]" href="index.html#skills">Skills</a>
           <a class="hover:text-[var(--color-link-hover)]" href="writings.html">Writings</a>
           <a class="hover:text-[var(--color-link-hover)]" href="contact.html">Contact</a>
         </div>
@@ -21,73 +21,27 @@
     </header>
 
     <main>
-      <section class="mx-auto max-w-5xl px-6 py-16">
+      <section class="mx-auto max-w-6xl px-6 py-16">
         <p class="mb-4 text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">
           Project Archive
         </p>
-        <h1 class="hero-heading max-w-3xl text-4xl font-bold leading-tight md:text-5xl">
-          More detail on selected data science projects.
+        <h1 class="hero-heading text-4xl font-bold leading-tight md:text-5xl">
+          Explications on projects.
         </h1>
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-text-muted)]">
-          Expanded notes on project questions, methods, tools, decisions, and results.
-          Each project can grow into a fuller case study as the work develops.
-        </p>
+        <ul class="archive-muted mt-6 list-disc space-y-2 pl-5 text-lg leading-8">
+          I aimed to work on a diverse variety of projects that would both develop my DS or statistical skills while also remaining in my realm of interest. 
+          I enjoy revisiting projects, but here they are as is now. <br><br>
+          Each project has a repository link with a README that addresses how I shaped the project around the 3 following goals:
+          <li><strong>Thoughtful</strong> - Most projects include reflections on the considerations of details or meanings of methods or results
+          (Links lead to the respective post on the writing page) </li>
+          <li><strong>Purposeful</Strong> - These projects exist to either understand something, solve a problem, or fill a gap. Sometimes the purpose is personal edification.</li>
+          <li><strong>Reproducible</strong> - I aim for anyone to reproduce my projects, either through the running the pipeline or the replication from scratch. 
+          Thus, in each repository (links lead to GitHub repos) I have the environment and pipeline instructions. Specifically, for analysis projects I attempted to document the decisions made in data cleaning or transformation that could impact the result. </li>
+        </ul>
       </section>
 
       <section class="border-y border-[var(--color-border)] bg-[var(--color-surface)] py-12">
-        <div class="mx-auto max-w-5xl space-y-4 px-6">
-          <details id="soul-meets-body-nlp" class="detail-panel archive-card-muted rounded-lg p-5 shadow-sm">
-            <summary class="flex items-center justify-between gap-4">
-              <div>
-                <h2 class="archive-title text-lg font-semibold">Soul Meets Body meets NLP</h2>
-                <p class="archive-muted mt-1 text-sm">Natural language processing on lyrics</p>
-              </div>
-            </summary>
-            <div class="mt-5 border-t border-[var(--color-border)] pt-5">
-              <div class="grid gap-6 md:grid-cols-[1fr_0.85fr]">
-                <div class="space-y-5">
-                  <section>
-                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Question</h3>
-                    <p class="archive-muted mt-2 text-sm leading-6">
-                      What patterns emerge when basic NLP methods are applied to lyrics written
-                      by Benjamin Gibbard?
-                    </p>
-                  </section>
-                  <section>
-                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Approach</h3>
-                    <p class="archive-muted mt-2 text-sm leading-6">
-                      Clean text, create document features, compare unsupervised groupings, and
-                      interpret clusters carefully instead of treating them as definitive labels.
-                    </p>
-                  </section>
-                  <section>
-                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Result / Next Step</h3>
-                    <p class="archive-muted mt-2 text-sm leading-6">
-                      Use this space for your key result, a representative visualization, or what
-                      you would improve next.
-                    </p>
-                  </section>
-                </div>
-                <aside class="archive-card rounded-lg p-4">
-                  <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Methods</h3>
-                  <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">NLP</span>
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Text preprocessing</span>
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Clustering</span>
-                  </div>
-                  <h3 class="archive-title mt-5 text-sm font-semibold uppercase tracking-wider">Tools</h3>
-                  <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">Python</span>
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">nltk</span>
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">pandas</span>
-                  </div>
-                  <a class="archive-link mt-5 inline-block text-sm font-semibold" href="https://github.com/lily-harper">
-                    Repository
-                  </a>
-                </aside>
-              </div>
-            </div>
-          </details>
+        <div class="mx-auto max-w-6xl space-y-4 px-6">
 
           <details id="accident-injury-classifier" class="detail-panel archive-card-muted rounded-lg p-5 shadow-sm">
             <summary class="flex items-center justify-between gap-4">
@@ -97,8 +51,28 @@
               </div>
             </summary>
             <div class="mt-5 border-t border-[var(--color-border)] pt-5">
-              <div class="grid gap-6 md:grid-cols-[1fr_0.85fr]">
-                <div class="space-y-5">
+              <div class="project-detail-flow">
+                <aside class="project-meta-card archive-card rounded-lg p-4">
+                  <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Methods</h3>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Classification</span>
+                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Data cleaning</span>
+                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Model evaluation</span>
+                  </div>
+                  <h3 class="archive-title mt-5 text-sm font-semibold uppercase tracking-wider">Tools</h3>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">Python</span>
+                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">sklearn</span>
+                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">pandas</span>
+                  </div>
+                  <a class="archive-link mt-5 inline-block text-sm font-semibold" href="https://github.com/lily-harper/injury_risk_classifier">
+                    Repository
+                  </a>
+                  <a class="archive-link mt-3 block text-sm font-semibold" href="writings/what_am_i_looking_at.html">
+                    Read reflection 
+                  </a>
+                </aside>
+                <div class="project-copy space-y-5">
                   <section>
                     <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Question</h3>
                     <p class="archive-muted mt-2 text-sm leading-6">
@@ -114,81 +88,178 @@
                     </p>
                   </section>
                   <section>
-                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Result / Next Step</h3>
+                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Result</h3>
                     <p class="archive-muted mt-2 text-sm leading-6">
-                      Add your strongest metric, a brief interpretation, and one limitation that
-                      shows statistical judgment.
+                      results etc honest metrics 
                     </p>
                   </section>
                 </div>
-                <aside class="archive-card rounded-lg p-4">
-                  <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Methods</h3>
-                  <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Classification</span>
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Data cleaning</span>
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Model evaluation</span>
-                  </div>
-                  <h3 class="archive-title mt-5 text-sm font-semibold uppercase tracking-wider">Tools</h3>
-                  <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">Python</span>
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">sklearn</span>
-                  </div>
-                  <a class="archive-link mt-5 inline-block text-sm font-semibold" href="https://github.com/lily-harper">
-                    Repository
-                  </a>
-                </aside>
               </div>
             </div>
           </details>
 
-          <details id="data-dashboard" class="detail-panel archive-card-muted rounded-lg p-5 shadow-sm">
+          <details id="soul-meets-body-nlp" class="detail-panel archive-card-muted rounded-lg p-5 shadow-sm">
             <summary class="flex items-center justify-between gap-4">
               <div>
-                <h2 class="archive-title text-lg font-semibold">Data Dashboard</h2>
-                <p class="archive-muted mt-1 text-sm">Interactive reporting</p>
+                <h2 class="archive-title text-lg font-semibold">Soul Meets Body meets NLP</h2>
+                <p class="archive-muted mt-1 text-sm">Natural language processing on lyrics</p>
               </div>
             </summary>
             <div class="mt-5 border-t border-[var(--color-border)] pt-5">
-              <div class="grid gap-6 md:grid-cols-[1fr_0.85fr]">
-                <div class="space-y-5">
+              <div class="project-detail-flow">
+                <aside class="project-meta-card archive-card rounded-lg p-4">
+                  <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Methods</h3>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">NLP</span>
+                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Text preprocessing</span>
+                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Clustering</span>
+                  </div>
+                  <h3 class="archive-title mt-5 text-sm font-semibold uppercase tracking-wider">Tools</h3>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">Python</span>
+                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">nltk</span>
+                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">pandas</span>
+                  </div>
+                  <a class="archive-link mt-5 inline-block text-sm font-semibold" href="https://github.com/lily-harper/death-cab-lyrics-nlp">
+                    Repository
+                  </a>
+                  <a class="archive-link mt-3 block text-sm font-semibold" href="writings/soul-meets-body-nlp.html">
+                    Read reflection
+                  </a>
+                </aside>
+                <div class="project-copy space-y-5">
                   <section>
                     <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Question</h3>
                     <p class="archive-muted mt-2 text-sm leading-6">
-                      What measures should be easiest to monitor, compare, and explain over time?
+                      Are there patterns or trends that can be found in lyrics written by Benjamin Gibbard?  
                     </p>
                   </section>
                   <section>
                     <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Approach</h3>
                     <p class="archive-muted mt-2 text-sm leading-6">
-                      Structure the data, choose clear measures, design a readable dashboard, and
-                      prioritize interpretability over visual complexity.
+                      Clean text, tokenize, and use lexical sentiment tools. Compare unsupervised groupings and
+                      interpret clusters carefully instead of treating them as definitive labels.
+                    </p>
+                  </section>
+                  <section>
+                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Summary</h3>
+                    <p class="archive-muted mt-2 text-sm leading-6">
+                      I clean the data, tokenize on whitespace 
+                      for word counts, then implement TF-IDF vectorization to represent the lyrics per song as a matrix, wherein 
+                      the songs become columns and individual words are rows. <br>
+
+                      VADER was used to evaluate sentiment per song and for each album. I reduce the dimensionality with TruncatedSVD (2 components for simple plotting and 10 for clustering). 
+                      Finally, I cluster using KMeans and evaluate the clusters. <br>
+
+                      To choose a reasonable number of components, I use elbow plots and explained variance to assess the tradeoff 
+                      between dimensionality reduction and retained information. To choose the number of clusters, I compare
+                       clustering metrics such as the Silhouette Score and Davies–Bouldin Index. 
+                    </p>
+                  </section>
+                  <section>
+                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Pipeline</h3>
+                    <p class="archive-muted mt-2 text-sm leading-6">
+                      The pipeline pulls raw Genius lyric data, cleans and normalizes the songs, then 
+                      builds TF-IDF features with VADER sentiment scores and TruncatedSVD components. It uses those 
+                      features to create clustering outputs, public lyrics-free CSVs, model artifacts, and report figures for 
+                      interpretation.
+                    </p>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          
+
+          <details id="museam" class="detail-panel archive-card-muted rounded-lg p-5 shadow-sm">
+            <summary class="flex items-center justify-between gap-4">
+              <div>
+                <h2 class="archive-title text-lg font-semibold">Museam Piece Database</h2>
+                <p class="archive-muted mt-1 text-sm">Data</p>
+              </div>
+            </summary>
+            <div class="mt-5 border-t border-[var(--color-border)] pt-5">
+              <div class="project-detail-flow">
+                <aside class="project-meta-card archive-card rounded-lg p-4">
+                  <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Methods</h3>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Database design</span>
+                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Data injestion</span>
+                  </div>
+                  <h3 class="archive-title mt-5 text-sm font-semibold uppercase tracking-wider">Tools</h3>
+                  <div class="mt-3 flex flex-wrap gap-2">
+                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">SQL</span>
+                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">Python</span>
+                  </div>
+                  <a class="archive-link mt-5 inline-block text-sm font-semibold" href="https://github.com/lily-harper/artworks_database">
+                    Repository
+                  </a>
+                </aside>
+                <div class="project-copy space-y-5">
+                  <section>
+                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Question</h3>
+                    <p class="archive-muted mt-2 text-sm leading-6">
+                      words
+                    </p>
+                  </section>
+                  <section>
+                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Approach</h3>
+                    <p class="archive-muted mt-2 text-sm leading-6">
+                      more words
                     </p>
                   </section>
                   <section>
                     <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Result / Next Step</h3>
                     <p class="archive-muted mt-2 text-sm leading-6">
-                      Add a screenshot, deployed link, or short note on how the dashboard supports
-                      decision-making.
+                     words
                     </p>
                   </section>
                 </div>
-                <aside class="archive-card rounded-lg p-4">
+              </div>
+            </div>
+          </details>
+
+          <details id="portfolio" class="detail-panel archive-card-muted rounded-lg p-5 shadow-sm">
+            <summary class="flex items-center justify-between gap-4">
+              <div>
+                <h2 class="archive-title text-lg font-semibold">Static Data Science Portfolio Site</h2>
+                <p class="archive-muted mt-1 text-sm">Lily Holmes</p>
+              </div>
+            </summary>
+            <div class="mt-5 border-t border-[var(--color-border)] pt-5">
+              <div class="project-detail-flow">
+                <aside class="project-meta-card archive-card rounded-lg p-4">
                   <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Methods</h3>
                   <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Dashboard design</span>
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Trend analysis</span>
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Reporting</span>
+                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Web Design</span>
                   </div>
                   <h3 class="archive-title mt-5 text-sm font-semibold uppercase tracking-wider">Tools</h3>
                   <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">SQL</span>
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">Tableau</span>
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">Excel</span>
+                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">HTML</span>
+                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">Tailwind CSS</span>
+                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">vanilla JavaScript</span>
                   </div>
-                  <a class="archive-link mt-5 inline-block text-sm font-semibold" href="https://github.com/lily-harper">
+                  <a class="archive-link mt-5 inline-block text-sm font-semibold" href="https://github.com/lily-harper/portfolio">
                     Repository
                   </a>
                 </aside>
+                <div class="project-copy space-y-5">
+                  <section>
+                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Question</h3>
+                    <p class="archive-muted mt-2 text-sm leading-6">
+                      Can I create a sharable object that encapsulates myself? 
+                    </p>
+                  </section>
+                  <section>
+                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Purpose</h3>
+                    <p class="archive-muted mt-2 text-sm leading-6">
+                      I wanted a simple virtual storage drawer where I could have writings and project links in a centralized place. I included it here in itself
+                      so anyone can view the source code. <br>
+                      This was also to learn web design and how to work along side Codex. 
+                    </p>
+                  </section>
+                </div>
               </div>
             </div>
           </details>
@@ -196,8 +267,8 @@
       </section>
     </main>
 
-    <footer class="border-t border-[var(--color-border)] bg-[var(--color-surface-muted)] px-6 py-8 text-[var(--color-text)]">
-      <div class="mx-auto flex max-w-5xl flex-col justify-between gap-4 sm:flex-row sm:items-center">
+    <footer class="border-t border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-8 text-[var(--color-text)]">
+      <div class="mx-auto flex max-w-6xl flex-col justify-between gap-4 sm:flex-row sm:items-center">
         <p class="archive-muted text-sm">Lily Holmes</p>
         <a class="archive-link text-sm font-semibold" href="index.html">Back to portfolio</a>
       </div>
@@ -205,7 +276,13 @@
 
     <script>
       function openProjectFromHash() {
-        const project = document.querySelector(window.location.hash);
+        const id = window.location.hash.slice(1);
+
+        if (!id) {
+          return;
+        }
+
+        const project = document.getElementById(id);
 
         if (project && project.tagName.toLowerCase() === "details") {
           project.open = true;

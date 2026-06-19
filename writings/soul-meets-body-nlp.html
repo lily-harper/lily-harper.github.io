@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Can Soul Meet Body meet NLP? | Lily Holmes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="bg-[var(--color-page)] text-[var(--color-text)] antialiased">
+    <header class="border-b border-[var(--color-border)] bg-[var(--color-nav)]">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+        <a class="text-base font-semibold tracking-wide text-[var(--color-heading)]" href="../index.html">Lily Holmes</a>
+        <div class="flex items-center gap-5 text-sm font-medium text-[var(--color-text-muted)]">
+          <a class="hover:text-[var(--color-link-hover)]" href="../index.html">Home</a>
+          <a class="hover:text-[var(--color-link-hover)]" href="../projects.html">Projects</a>
+          <a class="font-semibold text-[var(--color-heading)]" href="../writings.html">Writings</a>
+          <a class="hover:text-[var(--color-link-hover)]" href="../contact.html">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <article class="mx-auto max-w-6xl px-6 py-16">
+        <a class="archive-link text-sm font-semibold" href="../writings.html">Back to writings</a>
+        <p class="mt-8 text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">Project reflection</p>
+        <h1 class="hero-heading mt-3 text-4xl font-bold leading-tight md:text-5xl">
+          <i>Can</i> Soul Meets Body meet NLP?
+        </h1>
+        <p class="archive-muted mt-4 text-base leading-7">
+          I wanted to use NLP to learn about a band, but a band taught me about NLP.
+        </p>
+        <time class="archive-muted mt-4 block text-sm" datetime="2026-06">June 2026</time>
+        <a class="archive-link mt-4 inline-block text-sm font-semibold" href="../projects.html#soul-meets-body-nlp">
+          View related project
+        </a>
+        <aside class="archive-card mt-3 max-w-5xl rounded-md border-l-4 border-[var(--color-accent)] p-4">
+          <p class="archive-title text-base font-semibold leading-7">
+            "I cursed myself for being surprised <br> that this didn't play like it did in my mind" 
+            <br> - Death Cab for Cutie (<i>Bixby Canyon Bridge</i>).
+          </p>
+        </aside>
+        <div class="essay-body mt-10 max-w-5xl">
+          <p>
+            Another limitation can be found in the method I used for sentiment analysis.
+            Valence Aware Dictionary and sEntiment Reasoner (VADER) is useful for social
+            media analysis and can even handle punctuation and emojis. VADER uses a rule
+            based dictionary and can even detect intensifies, for example, the word “very”.
+            However, it ignores the context of the words and cannot detect sarcasm or irony
+            as well as a real, feeling person can.
+          </p>
+          <p>
+            Additionally, Gibbard does not rely on the word “very” for emotionally devastation
+            (very only appears 9 times in the entire corpus). Another example is from Tiny
+            Vessles (transatlanticism) - “that you told her that you love her but you dont”
+            returns a neutral VADER score.
+          </p>
+          <p>
+            A limitation in the machine learning process I employed is in the violation of
+            its assumption. Ben Gibbard writes songs that belong to multiple themes, which is
+            why I think the variety of interpretations on the r/DeathCabforCutie subreddit is
+            interesting. KMeans assumes that each observation, in this case, each song, belongs
+            to only one cluster, and that that cluster does not overlap with another cluster.
+          </p>
+          <p>
+            This one reason why I think the evaluation metrics I derived showed less than
+            perfect clusters. (high values for the Davies-Bouldin Index and Inertia Score)
+          </p>
+        </div>
+      </article>
+    </main>
+
+    <footer class="border-t border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-8 text-[var(--color-text)]">
+      <div class="mx-auto flex max-w-6xl flex-col justify-between gap-4 sm:flex-row sm:items-center">
+        <p class="archive-muted text-sm">Lily Holmes</p>
+        <a class="archive-link text-sm font-semibold" href="../writings.html">All writings</a>
+      </div>
+    </footer>
+  </body>
+</html>
