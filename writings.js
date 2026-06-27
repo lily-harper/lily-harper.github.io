@@ -1,6 +1,7 @@
 const writings = [
   {
     title: "What am I looking at?",
+    category: "project",
     meta: "Methods note",
     date: "June 2026",
     datetime: "2026-06",
@@ -10,15 +11,17 @@ const writings = [
   },
   {
     titleHtml: "<i>Can</i> Soul Meet Body meet NLP?",
+    category: "project",
     meta: "Project reflection",
     date: "June 2026",
     datetime: "2026-06",
     excerpt:
-      "I wanted to use NLP to learn about a band, but a band taught me about NLP: sentiment analysis, clustering assumptions, and what gets lost in computational shortcuts.",
+      "I wanted to use NLP to learn about a band, but a band taught me about NLP: sentiment analysis, clustering assumptions, and what gets lost in computational.",
     link: "writings/soul-meets-body-nlp.html",
   },
   {
     title: "Reading Notes on Data and Culture",
+    category: "musings",
     meta: "Reading notes · Draft",
     date: "June 2026",
     datetime: "2026-06",
@@ -28,6 +31,7 @@ const writings = [
   },
   {
     title: "Liner Notes",
+    category: "musings",
     meta: "J-card · Draft",
     date: "June 2026",
     datetime: "2026-06",
@@ -55,4 +59,27 @@ function writingCard(post) {
   `;
 }
 
-document.getElementById("writings-list").innerHTML = writings.map(writingCard).join("");
+function writingSection(title, description, category) {
+  const posts = writings.filter((post) => post.category === category);
+
+  if (posts.length === 0) {
+    return "";
+  }
+
+  return `
+    <section>
+      <div class="mb-6">
+        <p class="text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">${description}</p>
+        <h2 class="archive-heading mt-2 text-3xl font-bold">${title}</h2>
+      </div>
+      <div class="space-y-4">
+        ${posts.map(writingCard).join("")}
+      </div>
+    </section>
+  `;
+}
+
+document.getElementById("writings-list").innerHTML = [
+  writingSection("Project Notes", "Directly related to projects", "project"),
+  writingSection("Musings", "General thoughts and reading notes", "musings"),
+].join("");
