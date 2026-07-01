@@ -1,13 +1,13 @@
 const writings = [
   {
-    title: "What am I looking at?",
+    title: "'The map is not the territory'",
     category: "project",
-    meta: "Methods note",
-    date: "June 2026",
+    meta: "Modeling note",
+    date: "July 2026 (draft)",
     datetime: "2026-06",
     excerpt:
-      "A short note on why reproducibility is about more than whether code runs: assumptions, cleaning choices, model comparisons, and limitations all need to be visible.",
-    link: "writings/what_am_i_looking_at.html",
+      "Feature engineering as mechanical approximation",
+    link: "writings/the_map.html",
   },
   {
     titleHtml: "<i>Can</i> Soul Meet Body meet NLP?",
@@ -26,7 +26,7 @@ const writings = [
     date: "June 2026",
     datetime: "2026-06",
     excerpt:
-      "Selected notes from technical and humanistic reading, especially work that changes how I think about evidence, cities, culture, classification, and communication.",
+      "Selected notes from technical and humanistic reading, especially work that changes how I think about evidence, culture, and communication.",
     link: "writings/reading-notes-data-culture.html",
   },
   {
