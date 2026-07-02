@@ -42,30 +42,102 @@
           </p>
         </aside>
         <div class="essay-body mt-10 max-w-5xl">
+          <h2>Why</h2>
+          <p>
+            This project was conceived from a desire to learn how to implement natural
+            language processing (NLP) and unsupervised machine learning (ML) techniques in a
+            domain I like.
+          </p>
+          <p>
+            One of my favorite musicians of all time is Benjamin Gibbard of Death Cab for
+            Cutie and the Postal Service. His unique vocals and musicianship, especially on
+            acoustic arrangements, contribute to this, but what stands out to me is the
+            earnest symbolism in his lyrics. I wanted to use data science to find underlying
+            patterns that are less prominent through listening alone.
+          </p>
+
+          <h2>What I Did</h2>
+          <p>
+            After compiling and wrangling all the lyrics written and published by Gibbard, I
+            employed popular mathematical techniques to transform the words into quantitative
+            representations. I applied Valence Aware Dictionary and sEntiment Reasoner
+            (VADER) to get sentiment scores. Each song was represented by a vector using Term
+            Frequency-Inverse Document Frequency (TF-IDF), which weighs terms based on their
+            frequencies relative to the corpus. I then reduced the dimensionality of that
+            matrix using Singular Value Decomposition (SVD) and, with KMeans, tried to find
+            song clusters within it.
+          </p>
+
+          <h2>What I Found</h2>
+          <p>
+            The results were less revelatory than I had hoped, but they were useful in another
+            way.
+          </p>
+          <ul>
+            <li>
+              I found that the estimated sentiment of the lexicon differs both between the
+              single Postal Service album and the Death Cab for Cutie albums released around
+              that time and across time overall. Death Cab has been around for longer than
+              I’ve been alive, so it was interesting to see that change over time.
+            </li>
+            <li>
+              One of the clusters contained almost all the songs from the most recent album
+              release, which could signify lyrical cohesion within the album.
+            </li>
+            <li>
+              I still learned a lot about completing a project, basic NLP, and unsupervised
+              ML methods—and listened to some songs I hadn’t heard before.
+            </li>
+          </ul>
+          <p>
+            The most important thing I learned was that sometimes what is lost in the
+            reduction and computation is more interesting than what can be found. Not
+            everything can be discretized and cleanly categorized into a single,
+            mathematically formed cluster. Maybe the limitations reveal the parts of a song
+            that really matter.
+          </p>
+
+          <h2>What the Methods Missed</h2>
+          <p>
+            The largest and most glaring limitation in analyzing songs using NLP is that I
+            lost the insight that would be gleaned from the musicality of the song itself and
+            the interaction between the music and words. NLP only attempts to handle the words
+            themselves—not the notes, dynamics, keys, time signatures, or performances. I had
+            to calibrate my expectations early and remind myself that I was analyzing the
+            lyrics in the songs, not the songs themselves.
+          </p>
           <p>
             Another limitation can be found in the method I used for sentiment analysis.
-            Valence Aware Dictionary and sEntiment Reasoner (VADER) is useful for social
-            media analysis and can even handle punctuation and emojis. VADER uses a rule
-            based dictionary and can even detect intensifies, for example, the word “very”.
-            However, it ignores the context of the words and cannot detect sarcasm or irony
-            as well as a real, feeling person can.
+            I chose VADER because it is useful for social media analysis and can handle
+            punctuation, intensifiers, and even emojis. However, it ignores the context of
+            words and cannot detect sarcasm or irony. One example is the neutral VADER score
+            returned for a lyric from “Tiny Vessels” on <i>Transatlanticism</i>: “that you
+            told her that you love her but you don’t.”
           </p>
           <p>
-            Additionally, Gibbard does not rely on the word “very” for emotionally devastation
-            (very only appears 9 times in the entire corpus). Another example is from Tiny
-            Vessles (transatlanticism) - “that you told her that you love her but you dont”
-            returns a neutral VADER score.
+            Another limitation in the process is the violation of one of the assumptions in
+            the machine-learning method I used. KMeans assumes that each observation—in this
+            case, each song—belongs to only one cluster. However, Ben Gibbard writes songs
+            that belong to multiple themes at once. This is one reason why the evaluation
+            metrics indicated weak clustering, including high values for the Davies-Bouldin
+            Index and low Silhouette Scores.
+          </p>
+
+          <h2>Conclusion</h2>
+          <p>
+            As I learn more ML and NLP, I could integrate more techniques, including other
+            clustering algorithms, a topic-modeling process, or transformer-based models. I
+            could even add more data, such as key, time signatures, or album metadata.
+            However, I think listening to the discographies front to back taught me more
+            about why one of my favorite bands holds that space for me and many others.
           </p>
           <p>
-            A limitation in the machine learning process I employed is in the violation of
-            its assumption. Ben Gibbard writes songs that belong to multiple themes, which is
-            why I think the variety of interpretations on the r/DeathCabforCutie subreddit is
-            interesting. KMeans assumes that each observation, in this case, each song, belongs
-            to only one cluster, and that that cluster does not overlap with another cluster.
-          </p>
-          <p>
-            This one reason why I think the evaluation metrics I derived showed less than
-            perfect clusters. (high values for the Davies-Bouldin Index and Inertia Score)
+            Turning poetry and art into vectors was useful because it allowed me to compare
+            metrics across a couple hundred songs, but it also stripped from each song what,
+            in my opinion, makes a song special. I could not add ambiguity, personal
+            association, and musical context into the matrix. I realized that I did not take
+            these things away; rather, I added a matrix on the side—not to replace the songs,
+            but to supplement them.
           </p>
         </div>
       </article>

@@ -22,7 +22,7 @@ const writings = [
   {
     title: "Reading Notes on Data and Culture",
     category: "musings",
-    meta: "Reading notes · Draft",
+    meta: "Reading log",
     date: "June 2026",
     datetime: "2026-06",
     excerpt:
@@ -32,7 +32,7 @@ const writings = [
   {
     title: "Liner Notes",
     category: "musings",
-    meta: "J-card · Draft",
+    meta: "J-card",
     date: "June 2026",
     datetime: "2026-06",
     excerpt:

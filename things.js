@@ -109,7 +109,6 @@ skills: [
       date: "August 2025-May 2027 (expected)",
       description: [
         "Coursework in statistical methods and applications, data mining, and computer science.",
-        "Upcoming coursework: machine learning, statistical learning, and natural language processing.",
         "Membership in Data Science Student Association (DaSSA) and the Colorado Data Science Team"
       ],
     },
@@ -121,7 +120,6 @@ skills: [
       description: [
         "Coursework in economics, introductory econometrics, and history. Minor in Art History & Criticism.",
         "I also completed an undergraduate thesis in economics that drew on methods and ideas of behavioral economics. For fulfillment of a degree in history, I completed a capstone centered on consumption and labor in the late 20th century United States.",
-        "Collaborated with the Economics department, respective colleges (CAS and COB) to reinstate an academic honors society in economics",
       ],
     },
     {
