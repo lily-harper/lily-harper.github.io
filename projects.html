@@ -28,18 +28,31 @@
         <h1 class="hero-heading text-4xl font-bold leading-tight md:text-5xl">
           Explications on projects.
         </h1>
-        <ul class="archive-muted mt-6 list-disc space-y-2 pl-5 text-lg leading-8">
-          I aimed to work on a diverse variety of projects that would both develop my DS or statistical skills.
-          I enjoy revisiting projects, but here they are as is now. <br><br>
-          Each project has a repository link with a README.md that addresses how I shaped the project to achieve 3 characteristics:
-          <li><strong>Thoughtful</strong> - I think it is important to be cognicent of the limitations or implications of a piece of work.
-          Most projects include reflections on the considerations of details, meanings of methods, or results
-          (Links lead to the respective post on the writing page) </li>
-          <li><strong>Purposeful</Strong> - These projects exist to either understand something, solve a problem, or fill a gap. Sometimes the purpose is personal edification.</li>
-          <li><strong>Reproducible</strong> - I aim for anyone to be able reproduce my projects, either through running the pipeline or from scratch.
-          Thus, in each repository (links lead to GitHub repos) the environment and pipeline instructions are included. For analysis projects I attempted to document the
-          decisions made in data cleaning or transformation that could impact the result. </li>
-        </ul>
+        <div class="archive-muted mt-6 max-w-5xl text-lg leading-8">
+          <p>
+            I aimed to work on a diverse variety of projects that would develop my data science and
+            statistical skills. I enjoy revisiting projects, but here they are as-is now.
+          </p>
+          <p class="mt-5">
+            Each project has a repository link with a README.md that addresses how I shaped the project
+            to be thoughtful, purposeful, and reproducible.
+          </p>
+          <ul class="mt-5 list-disc space-y-2 pl-5">
+            <li>
+              <strong>Thoughtful</strong> — I think it is important to be cognizant of the limitations
+              or implications of a piece of work. Most projects include reflections on the details,
+              meanings of methods, or results.
+            </li>
+            <li>
+              <strong>Purposeful</strong> — These projects exist to either understand something, solve
+              a problem, or fill a gap. Sometimes the purpose is personal edification.
+            </li>
+            <li>
+              <strong>Reproducible</strong> — I aim for someone else to be able to reproduce my
+              projects, either through running the pipeline or from scratch.
+            </li>
+          </ul>
+        </div>
         <p class="archive-muted mt-6 text-lg leading-8">
           All of my projects live on
           <a
@@ -54,228 +67,14 @@
       </section>
 
       <section class="border-y border-[var(--color-border)] bg-[var(--color-surface)] py-12">
-        <div class="mx-auto max-w-6xl space-y-4 px-6">
-
-          <details id="accident-injury-classifier" class="detail-panel archive-card-muted rounded-lg p-5 shadow-sm">
-            <summary class="flex items-center justify-between gap-4">
-              <div>
-                <h2 class="archive-title text-lg font-semibold">Motor Vehicle Accident Injury Classifier</h2>
-                <p class="archive-muted mt-1 text-sm">Applied classifiers</p>
-              </div>
-            </summary>
-            <div class="mt-5 border-t border-[var(--color-border)] pt-5">
-              <div class="project-detail-flow">
-                <aside class="project-meta-card archive-card rounded-lg p-4">
-                  <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Methods</h3>
-                  <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Classification</span>
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Data cleaning</span>
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Model evaluation</span>
-                  </div>
-                  <h3 class="archive-title mt-5 text-sm font-semibold uppercase tracking-wider">Tools</h3>
-                  <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">Python</span>
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">sklearn</span>
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">pandas</span>
-                  </div>
-                  <a class="archive-link mt-5 inline-block text-sm font-semibold" href="https://github.com/lily-harper/injury_risk_classifier" target="_blank" rel="noopener noreferrer">
-                    Repository
-                  </a>
-                  <a class="archive-link mt-3 block text-sm font-semibold" href="writings/the_map.html">
-                    Read reflection 
-                  </a>
-                </aside>
-                <div class="project-copy space-y-5">
-                  <section>
-                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Question</h3>
-                    <p class="archive-muted mt-2 text-sm leading-6">
-                      Can structured accident data help classify whether an incident is associated
-                      with injury?
-                    </p>
-                  </section>
-                  <section>
-                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Approach</h3>
-                    <p class="archive-muted mt-2 text-sm leading-6">
-                      Clean the dataset, inspect class balance, build baseline classifiers, and
-                      evaluate performance with attention to false negatives and false positives.
-                    </p>
-                  </section>
-                  <section>
-                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Result</h3>
-                    <p class="archive-muted mt-2 text-sm leading-6">
-                      results etc honest metrics 
-                    </p>
-                  </section>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <details id="soul-meets-body-nlp" class="detail-panel archive-card-muted rounded-lg p-5 shadow-sm">
-            <summary class="flex items-center justify-between gap-4">
-              <div>
-                <h2 class="archive-title text-lg font-semibold">Soul Meets Body meets NLP</h2>
-                <p class="archive-muted mt-1 text-sm">Natural language processing on lyrics</p>
-              </div>
-            </summary>
-            <div class="mt-5 border-t border-[var(--color-border)] pt-5">
-              <div class="project-detail-flow">
-                <aside class="project-meta-card archive-card rounded-lg p-4">
-                  <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Methods</h3>
-                  <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">NLP</span>
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Text preprocessing</span>
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Clustering</span>
-                  </div>
-                  <h3 class="archive-title mt-5 text-sm font-semibold uppercase tracking-wider">Tools</h3>
-                  <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">Python</span>
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">nltk</span>
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">pandas</span>
-                  </div>
-                  <a class="archive-link mt-5 inline-block text-sm font-semibold" href="https://github.com/lily-harper/death-cab-lyrics-nlp" target="_blank" rel="noopener noreferrer">
-                    Repository
-                  </a>
-                  <a class="archive-link mt-3 block text-sm font-semibold" href="writings/soul-meets-body-nlp.html">
-                    Read reflection
-                  </a>
-                </aside>
-                <div class="project-copy space-y-5">
-                  <section>
-                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Question</h3>
-                    <p class="archive-muted mt-2 text-sm leading-6">
-                      Are there patterns or trends that can be found in lyrics written by Benjamin Gibbard?  
-                    </p>
-                  </section>
-                  <section>
-                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Approach</h3>
-                    <p class="archive-muted mt-2 text-sm leading-6">
-                      Clean text, tokenize, and use lexical sentiment tools. Compare unsupervised groupings and
-                      interpret clusters carefully instead of treating them as definitive labels.
-                    </p>
-                  </section>
-                  <section>
-                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Summary</h3>
-                    <p class="archive-muted mt-2 text-sm leading-6">
-                      I clean the data, tokenize on whitespace 
-                      for word counts, then implement TF-IDF vectorization to represent the lyrics per song as a matrix, wherein 
-                      the songs become columns and individual words are rows. <br>
-
-                      VADER was used to evaluate sentiment per song and for each album. I reduce the dimensionality with TruncatedSVD (2 components for simple plotting and 10 for clustering). 
-                      Finally, I cluster using KMeans and evaluate the clusters. <br>
-
-                      To choose a reasonable number of components, I use elbow plots and explained variance to assess the tradeoff 
-                      between dimensionality reduction and retained information. To choose the number of clusters, I compare
-                       clustering metrics such as the Silhouette Score and Davies–Bouldin Index. 
-                    </p>
-                  </section>
-                  <section>
-                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Pipeline</h3>
-                    <p class="archive-muted mt-2 text-sm leading-6">
-                      The pipeline pulls raw Genius lyric data, cleans and normalizes the songs, then 
-                      builds TF-IDF features with VADER sentiment scores and TruncatedSVD components. It uses those 
-                      features to create clustering outputs, public lyrics-free CSVs, model artifacts, and report figures for 
-                      interpretation.
-                    </p>
-                  </section>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          
-
-          <details id="museam" class="detail-panel archive-card-muted rounded-lg p-5 shadow-sm">
-            <summary class="flex items-center justify-between gap-4">
-              <div>
-                <h2 class="archive-title text-lg font-semibold">Museam Piece Database [in progress]</h2>
-                <p class="archive-muted mt-1 text-sm">Collecting data on museam collections</p>
-              </div>
-            </summary>
-            <div class="mt-5 border-t border-[var(--color-border)] pt-5">
-              <div class="project-detail-flow">
-                <aside class="project-meta-card archive-card rounded-lg p-4">
-                  <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Methods</h3>
-                  <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Database design</span>
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Data injestion</span>
-                  </div>
-                  <h3 class="archive-title mt-5 text-sm font-semibold uppercase tracking-wider">Tools</h3>
-                  <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">SQL</span>
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">Python</span>
-                  </div>
-                  <a class="archive-link mt-5 inline-block text-sm font-semibold" href="https://github.com/lily-harper/artworks_database" target="_blank" rel="noopener noreferrer">
-                    Repository
-                  </a>
-                </aside>
-                <div class="project-copy space-y-5">
-                  <section>
-                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Question</h3>
-                    <p class="archive-muted mt-2 text-sm leading-6">
-                      Can I build a useful database to house information on museam pieces? 
-                    </p>
-                  </section>
-                  <section>
-                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Approach</h3>
-                    <p class="archive-muted mt-2 text-sm leading-6">
-                      Collect data via APIs and scraping from reputable sources. Organize that data into tables. 
-                    </p>
-                  </section>
-                  <section>
-                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Result / Next Step</h3>
-                    <p class="archive-muted mt-2 text-sm leading-6">
-                     The next steps are to continue adding more data from other sources, for example, other museams. I also hope to use this to answer business questions or for general analysis later. 
-                    </p>
-                  </section>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <details id="portfolio" class="detail-panel archive-card-muted rounded-lg p-5 shadow-sm">
-            <summary class="flex items-center justify-between gap-4">
-              <div>
-                <h2 class="archive-title text-lg font-semibold">Static Data Science Portfolio Site</h2>
-                <p class="archive-muted mt-1 text-sm">Lily Holmes</p>
-              </div>
-            </summary>
-            <div class="mt-5 border-t border-[var(--color-border)] pt-5">
-              <div class="project-detail-flow">
-                <aside class="project-meta-card archive-card rounded-lg p-4">
-                  <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Methods</h3>
-                  <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="archive-method-tag rounded px-2 py-1 text-xs font-medium">Web Design</span>
-                  </div>
-                  <h3 class="archive-title mt-5 text-sm font-semibold uppercase tracking-wider">Tools</h3>
-                  <div class="mt-3 flex flex-wrap gap-2">
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">HTML</span>
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">Tailwind CSS</span>
-                    <span class="archive-tag rounded px-2 py-1 text-xs font-medium">vanilla JavaScript</span>
-                  </div>
-                  <a class="archive-link mt-5 inline-block text-sm font-semibold" href="https://github.com/lily-harper/portfolio" target="_blank" rel="noopener noreferrer">
-                    Repository
-                  </a>
-                </aside>
-                <div class="project-copy space-y-5">
-                  <section>
-                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Question</h3>
-                    <p class="archive-muted mt-2 text-sm leading-6">
-                      Can I create a sharable object that encapsulates myself? 
-                    </p>
-                  </section>
-                  <section>
-                    <h3 class="archive-title text-sm font-semibold uppercase tracking-wider">Purpose</h3>
-                    <p class="archive-muted mt-2 text-sm leading-6">
-                      I wanted a simple virtual storage drawer where I could have writings and project links in a centralized place. I included it here in itself
-                      so anyone can view the source code. <br>
-                      This was also to learn web design and how to work along side Codex. 
-                    </p>
-                  </section>
-                </div>
-              </div>
-            </div>
-          </details>
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="mb-8">
+            <p class="text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">
+              Project archive
+            </p>
+            <h2 class="archive-heading mt-2 text-3xl font-bold">Selected work</h2>
+          </div>
+          <div id="projects-list" class="grid gap-6 md:grid-cols-2"></div>
         </div>
       </section>
     </main>
@@ -287,23 +86,6 @@
       </div>
     </footer>
 
-    <script>
-      function openProjectFromHash() {
-        const id = window.location.hash.slice(1);
-
-        if (!id) {
-          return;
-        }
-
-        const project = document.getElementById(id);
-
-        if (project && project.tagName.toLowerCase() === "details") {
-          project.open = true;
-        }
-      }
-
-      openProjectFromHash();
-      window.addEventListener("hashchange", openProjectFromHash);
-    </script>
+    <script src="things.js"></script>
   </body>
 </html>

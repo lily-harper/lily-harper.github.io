@@ -7,7 +7,7 @@ const portfolio = {
         "To predict, at crash time, which motor vehicle accidents are more injury risk prone based on crash characteristics",
       methods: ["Classification", "Data cleaning", "Model evaluation", "Feature creation"],
       tools: ["Python", "sklearn"],
-      link: "projects.html#accident-injury-classifier",
+      link: "projects/accident-injury-classifier.html",
       repoLink: "https://github.com/lily-harper/injury_risk_classifier",
       reflectionLink: "writings/the_map.html",
       reflectionTitle: "Read reflection",
@@ -22,7 +22,7 @@ const portfolio = {
         "Lyrics similarity and sentiment analysis with TF-IDF, SVD, and KMeans",
       methods: ["NLP", "Text preprocessing", "Clustering"],
       tools: ["Python", "nltk", "pandas"],
-      link: "projects.html#soul-meets-body-nlp",
+      link: "projects/soul-meets-body-nlp.html",
       repoLink: "https://github.com/lily-harper/death-cab-lyrics-nlp",
       reflectionLink: "writings/soul-meets-body-nlp.html",
       reflectionTitle: "Read reflection",
@@ -37,7 +37,7 @@ const portfolio = {
         "Building a relational database using PostGreSQL for museam artwork",
       methods: ["Database management"],
       tools: ["SQL", "Python", "API"], 
-      link: "projects.html#data-dashboard",
+      link: "projects/museam.html",
       repoLink: "https://github.com/lily-harper/artworks_database",
       graphicLabel: "Dashboard preview",
       graphicSrc: "assets/project_cards/data_model.png",
@@ -50,7 +50,7 @@ const portfolio = {
         "Self marketing where signal persists over noise (hopefully)",
       methods: ["Basic web design"],
       tools: ["HTML", "CSS", "JavaScript", "Codex"],
-      link: "projects.html#portfolio",
+      link: "projects/portfolio.html",
       graphicLabel: "Classifier results",
       graphicSrc: "assets/project_cards/portfolio.png",
       graphicAlt: "screenshot of my portfolio",
@@ -126,7 +126,7 @@ skills: [
       type: "experience",
       role: "Data Specialist - Contract",
       organization: "Polco / NRC",
-      date: "September 2025-Dececember 2026",
+      date: "September 2025-Dececember 2025",
       description:[
         "Researched, categorized, and completed data entry tasks in Excel to inform stakeholders and support improvements to Boulder's Transportation Master Plan",
         "Collaborated to compile datasets on businesses in Boulder Valley for completeness and to improve usability"],
@@ -182,39 +182,43 @@ function projectGraphic(project) {
   `;
 }
 
-document.getElementById("projects-list").innerHTML = portfolio.projects
-  .map(
-    (project) => `
-      <article class="archive-card-muted rounded-lg p-5 shadow-sm">
-        ${projectGraphic(project)}
-        <h3 class="text-lg font-semibold">
-          <a class="archive-title hover:text-[var(--color-link-hover)]" href="${project.link}">${project.title}</a>
-        </h3>
-        ${
-          project.subtitle
-            ? `<p class="archive-accent mt-1 text-xs font-semibold uppercase tracking-wider">${project.subtitle}</p>`
-            : ""
-        }
-        <p class="archive-muted mt-3 text-base leading-7">${project.summary}</p>
-        ${chipSection("Methods", project.methods, "archive-method-tag")}
-        ${chipSection("Tools", project.tools, "archive-tag")}
-        <div class="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold">
-          <a class="archive-link" href="${project.link}">View project</a>
+const projectsList = document.getElementById("projects-list");
+
+if (projectsList) {
+  projectsList.innerHTML = portfolio.projects
+    .map(
+      (project) => `
+        <article class="archive-card-muted rounded-lg p-5 shadow-sm">
+          ${projectGraphic(project)}
+          <h3 class="text-lg font-semibold">
+            <a class="archive-title hover:text-[var(--color-link-hover)]" href="${project.link}">${project.title}</a>
+          </h3>
           ${
-            project.repoLink
-              ? `<a class = "archive-link" href = "${project.repoLink}" target="_blank" rel="noopener noreferrer"> GitHub repo </a>`
-              : ""
-            }
-            ${
-            project.reflectionLink
-              ? `<a class="archive-link" href="${project.reflectionLink}">${project.reflectionTitle || "Read reflection"}</a>`
+            project.subtitle
+              ? `<p class="archive-accent mt-1 text-xs font-semibold uppercase tracking-wider">${project.subtitle}</p>`
               : ""
           }
-        </div>
-      </article>
-    `
-  )
-  .join("");
+          <p class="archive-muted mt-3 text-base leading-7">${project.summary}</p>
+          ${chipSection("Methods", project.methods, "archive-method-tag")}
+          ${chipSection("Tools", project.tools, "archive-tag")}
+          <div class="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold">
+            <a class="archive-link" href="${project.link}">View project</a>
+            ${
+              project.repoLink
+                ? `<a class="archive-link" href="${project.repoLink}" target="_blank" rel="noopener noreferrer">GitHub repo</a>`
+                : ""
+              }
+              ${
+              project.reflectionLink
+                ? `<a class="archive-link" href="${project.reflectionLink}">${project.reflectionTitle || "Read reflection"}</a>`
+                : ""
+            }
+          </div>
+        </article>
+      `
+    )
+    .join("");
+}
 
 function skillCard(group) {
   return `
@@ -235,13 +239,17 @@ const remainingSkills = portfolio.skills.filter(
   (group) => group.id !== "programming" && group.id !== "workflow"
 );
 
-document.getElementById("skills-list").innerHTML = `
-  <div class="skill-stack flex flex-col gap-5">
-    ${skillCard(programmingSkills)}
-    ${skillCard(workflowSkills)}
-  </div>
-  ${remainingSkills.map(skillCard).join("")}
-`;
+const skillsList = document.getElementById("skills-list");
+
+if (skillsList) {
+  skillsList.innerHTML = `
+    <div class="skill-stack flex flex-col gap-5">
+      ${skillCard(programmingSkills)}
+      ${skillCard(workflowSkills)}
+    </div>
+    ${remainingSkills.map(skillCard).join("")}
+  `;
+}
 
 function experienceParagraphs(description) {
   const paragraphs = Array.isArray(description) ? description : [description];
@@ -279,7 +287,11 @@ function experienceGroup(title, type) {
   `;
 }
 
-document.getElementById("experience-list").innerHTML = [
-  experienceGroup("Education", "education"),
-  experienceGroup("Experience", "experience"),
-].join("");
+const experienceList = document.getElementById("experience-list");
+
+if (experienceList) {
+  experienceList.innerHTML = [
+    experienceGroup("Education", "education"),
+    experienceGroup("Experience", "experience"),
+  ].join("");
+}
