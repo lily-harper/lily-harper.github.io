@@ -31,6 +31,7 @@ const writings = [
   },
   {
     title: "Liner Notes",
+    published: false,
     category: "musings",
     meta: "J-card",
     date: "June 2026",
@@ -60,7 +61,9 @@ function writingCard(post) {
 }
 
 function writingSection(title, description, category) {
-  const posts = writings.filter((post) => post.category === category);
+  const posts = writings.filter(
+    (post) => post.category === category && post.published !== false,
+  );
 
   if (posts.length === 0) {
     return "";
