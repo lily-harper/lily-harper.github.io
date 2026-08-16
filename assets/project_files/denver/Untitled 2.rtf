@@ -1,0 +1,29 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\froman\fcharset0 TimesNewRomanPS-ItalicMT;\f2\froman\fcharset0 TimesNewRomanPS-BoldMT;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl368\sa213\partightenfactor0
+
+\f0\fs32 \cf2 \expnd0\expndtw0\kerning0
+Reading Between The Columns. \
+The gap between real world plausibility and predictive value. \
+\'93If this isn\'92t what you see\
+It doesn\'92t make you blind\'94 \'96 Soundgarden, 
+\f1\i Superunknown
+\f0\i0 \
+Why\
+My goal was to take a messy, real world dataset, with information entered by real observers and feed it into a predictive model. Between cleaning the data and fitting the model, I wanted to reconstruct something closer to the crashes themselves than the original columns gave. Feature engineering became a way to assemble the recorded attributes, such as directions of travel, locations, times, road conditions and driver actions, into a richer representation of each event. \'a0\
+I did not want to treat every column as an isolated fact and I thought that combining them could represent the relationships. I figured a crash on a highway at night could have a different result than one during bumper to bumper crawling traffic, all else equal. \
+I assumed that a feature resembling the physical event would be useful for prediction, but this project showed me there are different standards that work in tandem. \
+Neither my model nor I had observed the crashes directly. It was only a hypothesis that modifying speed limits with rush hour was more predictive than rush hour or speed limit alone. \
+My approximation of the highway interaction did not have the predictive improvement that I had hoped for it. It could mean the theory was wrong, or that that available variables were too crude to represent the mechanism well. The speed limit of the roadway from another dataset served as a proxy for operating speed, but other physical features, such as lane position or vehicle mass were unknown. Thus, a variable designed to separate two different types of highway crashes might be separating events with similar kinematics. \
+Conclusion \
+This exposed a potential tension between features justified by real world plausibility and those justified by demonstrated predictive value. The model could gain no information from a feature that I thought mattered. On the other hand, predictive power can establish usefulness without simultaneously establishing meaning in the mechanisms. I do want to avoid overstating the divide though. \'a0\
+I now think of that gap as the underlying 
+\f2\b superunknown
+\f0\b0 , which could include information not recorded, reasons why a mechanism was misrepresented, or patterns that exist without a satisfying explanation.\
+This tension changed how I viewed data wrangling and modeling. I started the project wanting to reconstruct the crash in more detail than by encoding assumptions about how its recorded attributes interacted. I finished the project with a stricter standard that the predictive power a feature has is not predicated on its persuasive concept. The story behind a feature can justify creating and testing it, but its performance, judged on an objective criterion, in a model applied to unseen data is what provides the justification for relying on it for prediction. When the feature fails, what is unknown is whether I misunderstood the crash or simply failed to represent it. \
+}

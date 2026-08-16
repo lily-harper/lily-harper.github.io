@@ -45,26 +45,100 @@
             <a class="archive-link mt-5 inline-block text-sm font-semibold" href="https://github.com/lily-harper/injury_risk_classifier" target="_blank" rel="noopener noreferrer">
               Repository
             </a>
-            <a class="archive-link mt-3 block text-sm font-semibold" href="../writings/the_map.html">
+            <a class="archive-link mt-3 block text-sm font-semibold" href="../writings/superunknown.html">
               Read reflection
+            </a>
+            <a class="archive-link mt-3 block text-sm font-semibold" href="https://github.com/lily-harper/injury_risk_classifier/blob/main/Motor%20Vehicle%20Injurious%20Outcome%20Classification.pdf" target="_blank" rel="noopener noreferrer">
+              Read unabridged report 
             </a>
           </aside>
 
-          <div class="essay-body">
-            <h2>Question</h2>
-            <p>
-              Can structured accident data help classify whether an incident is associated with injury?
+          <div class="essay-body essay-body-wide">
+            <p class="mt-0 text-xl leading-8">
+              Using more than 270,000 Denver crash records spanning over a decade, I compared
+              logistic regression, decision tree, and naïve Bayes classifiers to predict whether
+              a motor vehicle accident resulted in a serious injury or fatality.
             </p>
+
+            <h2>Data</h2>
+            <p>
+              The data came from the City of Denver Open Data Repository and included accident
+              time and location, road conditions, vehicle information, driver actions, and
+              contributing factors. I also created temporal, geospatial, and mechanical features,
+              including nighttime and weekend indicators, speed limits, highway indicators,
+              vehicle size differences, and direction differences.
+            </p>
+
+            <figure class="project-figure project-figure-wrap mt-8">
+              <img
+                class="w-full"
+                src="../assets/project_files/denver/Picture1.png"
+                alt="Chart of annual Denver crash volume and injury rate from 2013 through April 2026"
+              />
+              <figcaption>
+                Annual crash volume and the share of crashes involving injury in the source data.
+                The 2013 and 2026 observations cover partial years.
+              </figcaption>
+            </figure>
 
             <h2>Approach</h2>
             <p>
-              Clean the dataset, inspect class balance, build baseline classifiers, and evaluate
-              performance with attention to false negatives and false positives.
+              I compared the three model families with a no-injury baseline and evaluated
+              probability thresholds under severe class imbalance. I used a temporal split,
+              training on earlier accidents and evaluating on later observations to more closely
+              reflect a real-world deployment setting.
             </p>
 
-            <h2>Result</h2>
+            <figure class="project-figure project-figure-wrap mt-8">
+              <img
+                class="mx-auto w-full"
+                src="../assets/project_files/denver/Picture2.png"
+                alt="Validation ROC curves comparing balanced logistic regression, a tuned decision tree, naïve Bayes, and a no-injury baseline"
+              />
+              <figcaption>
+                Validation ROC curves for the strongest candidate from each model family. Balanced
+                logistic regression had the highest validation ROC-AUC.
+              </figcaption>
+            </figure>
+
+            <h2>Model evaluation</h2>
             <p>
-              Results and honest metrics live with the project repository and reflection.
+              The final model was balanced logistic regression with a probability threshold of
+              0.48. Its performance on the held-out test set was:
+            </p>
+
+            <div class="project-table-wrap mt-6">
+              <table class="project-metrics-table">
+                <caption>Balanced Logistic Regression performance</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Metric</th>
+                    <th scope="col">Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Accuracy</th><td>0.825</td></tr>
+                  <tr><th scope="row">Recall</th><td>0.692</td></tr>
+                  <tr><th scope="row">Precision</th><td>0.081</td></tr>
+                  <tr><th scope="row">F1 score</th><td>0.145</td></tr>
+                  <tr><th scope="row">ROC-AUC</th><td>0.845</td></tr>
+                  <tr><th scope="row">PR-AUC</th><td>0.229</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2>Project value</h2>
+            <p>
+              The model identified about 69% of serious injury or fatal crashes, but only about 8%
+              of its positive predictions corresponded to one. That false-positive burden would be
+              unacceptable for the motivating EMS dispatch scenario, so this is a demonstration of
+              rare event classification and temporal model evaluation and not a system that should be
+              deployed.
+            </p>
+            <p>
+              The project also demonstrates cleaning real-world public data, domain related feature
+              engineering, geospatial integration, probability-threshold evaluation, model
+              comparison, and basic automated testing.
             </p>
           </div>
         </div>

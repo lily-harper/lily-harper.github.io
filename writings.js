@@ -1,16 +1,16 @@
 const writings = [
   {
-    title: "'The map is not the territory'",
+    title: "Superunknown",
     category: "project",
-    meta: "Modeling note",
-    date: "July 2026 (draft)",
-    datetime: "2026-06",
+    meta: "Project reflection",
+    date: "August 2026",
+    datetime: "2026-08",
     excerpt:
-      "Feature engineering as mechanical approximation",
-    link: "writings/the_map.html",
+      "The gap between real-world plausibility and predictive value.",
+    link: "writings/superunknown.html",
   },
   {
-    titleHtml: "<i>Can</i> Soul Meet Body meet NLP?",
+    titleHtml: "<i>Can</i> Soul Meets Body meet NLP?",
     category: "project",
     meta: "Project reflection",
     date: "June 2026",
@@ -21,6 +21,7 @@ const writings = [
   },
   {
     title: "Reading Notes on Data and Culture",
+    published: false,
     category: "musings",
     meta: "Reading log",
     date: "June 2026",
@@ -31,7 +32,6 @@ const writings = [
   },
   {
     title: "Liner Notes",
-    published: false,
     category: "musings",
     meta: "J-card",
     date: "June 2026",
@@ -74,6 +74,11 @@ function writingSection(title, description, category) {
       <div class="mb-6">
         <p class="text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">${description}</p>
         <h2 class="archive-heading mt-2 text-3xl font-bold">${title}</h2>
+        ${
+          category === "project"
+            ? `<p class="archive-muted mt-3 max-w-3xl text-base leading-7">I wanted to include reflections on the details, meanings of methods, or results of the various projects.</p>`
+            : ""
+        }
       </div>
       <div class="space-y-4">
         ${posts.map(writingCard).join("")}

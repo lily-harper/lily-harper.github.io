@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Superunknown | Lily Holmes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="bg-[var(--color-page)] text-[var(--color-text)] antialiased">
+    <header class="border-b border-[var(--color-border)] bg-[var(--color-nav)]">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+        <a class="text-base font-semibold tracking-wide text-[var(--color-heading)]" href="../index.html">Lily Holmes</a>
+        <div class="flex items-center gap-5 text-sm font-medium text-[var(--color-text-muted)]">
+          <a class="hover:text-[var(--color-link-hover)]" href="../index.html">Home</a>
+          <a class="hover:text-[var(--color-link-hover)]" href="../projects.html">Projects</a>
+          <a class="font-semibold text-[var(--color-heading)]" href="../writings.html">Writings</a>
+          <a class="hover:text-[var(--color-link-hover)]" href="../contact.html">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <article class="mx-auto max-w-6xl px-6 py-16">
+        <a class="archive-link text-sm font-semibold" href="../writings.html">Back to writings</a>
+        <p class="mt-8 text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">Project reflection</p>
+        <h1 class="hero-heading mt-3 text-4xl font-bold leading-tight md:text-5xl">
+          Superunknown
+        </h1>
+        <p class="archive-muted mt-4 text-base leading-7">
+          The gap between real-world plausibility and predictive value.
+        </p>
+        <time class="archive-muted mt-4 block text-sm" datetime="2026-08">August 2026</time>
+        <a class="archive-link mt-4 inline-block text-sm font-semibold" href="../projects/accident-injury-classifier.html">
+          View related project
+        </a>
+        <aside class="archive-card mt-3 max-w-5xl rounded-md border-l-4 border-[var(--color-accent)] p-4">
+          <p class="archive-title text-base font-semibold leading-7">
+            “If this isn’t what you see<br />
+            It doesn’t make you blind”<br />
+            Soundgarden, <i>Superunknown</i>
+          </p>
+        </aside>
+        <div class="essay-body mt-10 max-w-5xl">
+          <h2>Why</h2>
+          <p>
+            My goal was to take a messy, real-world dataset, with information entered by real
+            observers, and feed it into a predictive model. Between cleaning the data and fitting
+            the model, I wanted to reconstruct something closer to the crashes themselves than the
+            original columns gave. Feature engineering became a way to assemble the recorded
+            attributes, such as directions of travel, locations, times, road conditions, and driver
+            actions, into a richer representation of each event.
+          </p>
+          <p>
+            I did not want to treat every column as an isolated fact. I thought that combining them
+            could represent the relationships between them. A crash on a highway at night could
+            have a different result than one during bumper-to-bumper traffic, all else equal.
+          </p>
+          <p>
+            I assumed that a feature resembling the physical event would be useful for prediction,
+            but this project showed me that there are different standards that work in tandem.
+          </p>
+
+          <h2>Reconstructing What Wasn’t Observed</h2>
+          <p>
+            Neither my model nor I had observed the crashes directly. It was only a hypothesis that
+            modifying speed limits with rush hour would be more predictive than rush hour or speed
+            limit alone.
+          </p>
+          <p>
+            My approximation of the highway interaction did not have the predictive improvement I
+            had hoped for. It could mean the theory was wrong, or that the available variables were
+            too crude to represent the mechanism well. The speed limit of the roadway, taken from
+            another dataset, served as a proxy for operating speed, but other physical features,
+            such as lane position or vehicle mass, were unknown. Thus, a variable designed to
+            separate two different types of highway crashes might instead be separating events with
+            similar kinematics.
+          </p>
+
+          <h2>Conclusion</h2>
+          <p>
+            This exposed a potential tension between features justified by real-world plausibility
+            and those justified by demonstrated predictive value. The model could gain no
+            information from a feature that I thought mattered. On the other hand, predictive power
+            can establish usefulness without simultaneously establishing meaning in the mechanisms.
+            I do want to avoid overstating the divide, though.
+          </p>
+          <p>
+            I now think of that gap as the underlying <i>superunknown</i>, which could include
+            information not recorded, reasons why a mechanism was misrepresented, or patterns that
+            exist without a satisfying explanation.
+          </p>
+          <p>
+            This tension changed how I viewed data wrangling and modeling. I started the project
+            wanting to reconstruct the crash in more detail by encoding assumptions about how its
+            recorded attributes interacted. I finished the project with a stricter standard: the
+            predictive power a feature has is not predicated on its persuasive concept. The story
+            behind a feature can justify creating and testing it, but its performance, judged on an
+            objective criterion in a model applied to unseen data, is what provides the justification
+            for relying on it for prediction. When the feature fails, what is unknown is whether I
+            misunderstood the crash or simply failed to represent it.
+          </p>
+        </div>
+      </article>
+    </main>
+
+    <footer class="border-t border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-8 text-[var(--color-text)]">
+      <div class="mx-auto flex max-w-6xl flex-col justify-between gap-4 sm:flex-row sm:items-center">
+        <p class="archive-muted text-sm">Lily Holmes</p>
+        <a class="archive-link text-sm font-semibold" href="../writings.html">All writings</a>
+      </div>
+    </footer>
+  </body>
+</html>

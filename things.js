@@ -9,7 +9,7 @@ const portfolio = {
       tools: ["Python", "sklearn"],
       link: "projects/accident-injury-classifier.html",
       repoLink: "https://github.com/lily-harper/injury_risk_classifier",
-      reflectionLink: "writings/the_map.html",
+      reflectionLink: "writings/superunknown.html",
       reflectionTitle: "Read reflection",
       graphicLabel: "Denver Map",
       graphicSrc: "assets/project_cards/denver_map.png",
@@ -185,9 +185,57 @@ function projectGraphic(project) {
 const projectsList = document.getElementById("projects-list");
 
 if (projectsList) {
+  const archiveLayout = projectsList.dataset.layout === "archive";
+
   projectsList.innerHTML = portfolio.projects
     .map(
-      (project) => `
+      (project) => archiveLayout
+        ? `
+        <article class="archive-card-muted project-archive-row p-5 shadow-sm">
+          <div class="project-archive-side">
+            <a class="archive-link project-archive-cta text-sm font-semibold" href="${project.link}">View project</a>
+            ${
+              project.graphicSrc
+                ? `<a class="project-archive-thumbnail" href="${project.link}" aria-label="View ${project.title}">
+                    <img src="${project.graphicSrc}" alt="${project.graphicAlt || project.title}" />
+                  </a>`
+                : ""
+            }
+          </div>
+          <div class="project-archive-heading">
+            <div>
+              <h3 class="text-lg font-semibold">
+                <a class="archive-title hover:text-[var(--color-link-hover)]" href="${project.link}">${project.title}</a>
+              </h3>
+              ${
+                project.subtitle
+                  ? `<p class="archive-accent mt-1 text-xs font-semibold uppercase tracking-wider">${project.subtitle}</p>`
+                  : ""
+              }
+            </div>
+          </div>
+          <p class="archive-muted mt-3 text-base leading-7">${project.summary}</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            ${tagList(project.methods || [], "archive-method-tag")}
+          </div>
+          <div class="mt-2 flex flex-wrap gap-2">
+            ${tagList(project.tools || [], "archive-tag")}
+          </div>
+          <div class="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold">
+            ${
+              project.repoLink
+                ? `<a class="archive-link" href="${project.repoLink}" target="_blank" rel="noopener noreferrer">GitHub repo</a>`
+                : ""
+            }
+            ${
+              project.reflectionLink
+                ? `<a class="archive-link" href="${project.reflectionLink}">${project.reflectionTitle || "Read reflection"}</a>`
+                : ""
+            }
+          </div>
+        </article>
+      `
+        : `
         <article class="archive-card-muted rounded-lg p-5 shadow-sm">
           ${projectGraphic(project)}
           <h3 class="text-lg font-semibold">
