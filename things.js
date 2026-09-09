@@ -2,6 +2,7 @@ const portfolio = {
   projects: [
     {
       title: "Motor Vehicle Accident Injury Classifier",
+      featured: true,
       subtitle: "Applied classifiers",
       summary:
         "To predict, at crash time, which motor vehicle accidents are more injury risk prone based on crash characteristics",
@@ -16,7 +17,22 @@ const portfolio = {
       graphicAlt: "Map of Denver's accidents",
     },
     {
+      title: "Museam piece Database [in progress]",
+      featured: true,
+      subtitle: "Database and Schema for artwork from select Museams for analysis",
+      summary:
+        "Building a relational database using PostGreSQL for museam artwork",
+      methods: ["Database management"],
+      tools: ["SQL", "Python", "API"],
+      link: "projects/museam.html",
+      repoLink: "https://github.com/lily-harper/artworks_database",
+      graphicLabel: "Dashboard preview",
+      graphicSrc: "assets/project_cards/data_model.png",
+      graphicAlt: "data_model",
+    },
+    {
       title: "Soul Meets Body meets NLP",
+      featured: true,
       subtitle: "Basic NLP techniques on lyrics written by Benjamin Gibbard.",
       summary:
         "Lyrics similarity and sentiment analysis with TF-IDF, SVD, and KMeans",
@@ -31,19 +47,6 @@ const portfolio = {
       graphicAlt: "Sentiment per year",
     },
     {
-      title: "Museam piece Database [in progress]",
-      subtitle: "Database and Schema for artwork from select Museams for analysis",
-      summary:
-        "Building a relational database using PostGreSQL for museam artwork",
-      methods: ["Database management"],
-      tools: ["SQL", "Python", "API"], 
-      link: "projects/museam.html",
-      repoLink: "https://github.com/lily-harper/artworks_database",
-      graphicLabel: "Dashboard preview",
-      graphicSrc: "assets/project_cards/data_model.png",
-      graphicAlt: "data_model",
-    },
-    {
       title: "Portfolio",
       subtitle: "This website itself",
       summary:
@@ -55,8 +58,20 @@ const portfolio = {
       graphicSrc: "assets/project_cards/portfolio.png",
       graphicAlt: "screenshot of my portfolio",
     },
+    {
+      title: "Bon Iver Everywhere",
+      subtitle: "Interactive collaboration network",
+      summary:
+        "Explore Bon Iver's direct collaborators and the wider musical network around them.",
+      methods: ["Network analysis", "Data visualization", "Graph exploration"],
+      tools: ["Python", "Plotly", "JavaScript"],
+      link: "projects/bon-iver-everywhere.html",
+      deploymentLink: "https://lilyholmes.dev/bon-iver-everywhere/",
+      deploymentTitle: "Live visualization",
+      graphicLabel: "Collaboration network",
+    },
   ],
-skills: [
+  skills: [
   {
     id: "programming",
     category: "Programming",
@@ -99,8 +114,22 @@ skills: [
       "DBeaver",
       "AI-assisted coding workflows",
     ],
-  },
-],
+    },
+  ],
+  certifications: [
+    {
+      title: "IBM Data Analyst",
+      issuer: "IBM",
+      credentialUrl:
+        "https://www.coursera.org/account/accomplishments/specialization/XQ9B23F01OFE",
+    },
+    {
+      title: "IBM Data Science",
+      issuer: "IBM",
+      credentialUrl:
+        "https://www.coursera.org/account/accomplishments/specialization/6GMYO3NR1V8X",
+    },
+  ],
   experience: [
     {
       type: "education",
@@ -182,60 +211,102 @@ function projectGraphic(project) {
   `;
 }
 
+function archiveProjectCard(project) {
+  if (project.placeholder) {
+    return `
+      <article class="archive-card-muted project-archive-row p-5 shadow-sm">
+        <h3 class="text-lg font-semibold archive-title">${project.title}</h3>
+        <p class="archive-accent mt-1 text-xs font-semibold uppercase tracking-wider">${project.subtitle}</p>
+        <p class="archive-muted mt-3 text-base leading-7">${project.summary}</p>
+      </article>
+    `;
+  }
+
+  return `
+    <article class="archive-card-muted project-archive-row p-5 shadow-sm">
+      <div class="project-archive-side">
+        <a class="archive-link project-archive-cta text-sm font-semibold" href="${project.link}">View project</a>
+        ${
+          project.graphicSrc
+            ? `<a class="project-archive-thumbnail" href="${project.link}" aria-label="View ${project.title}">
+                <img src="${project.graphicSrc}" alt="${project.graphicAlt || project.title}" />
+              </a>`
+            : ""
+        }
+      </div>
+      <div class="project-archive-heading">
+        <div>
+          <h3 class="text-lg font-semibold">
+            <a class="archive-title hover:text-[var(--color-link-hover)]" href="${project.link}">${project.title}</a>
+          </h3>
+          ${
+            project.subtitle
+              ? `<p class="archive-accent mt-1 text-xs font-semibold uppercase tracking-wider">${project.subtitle}</p>`
+              : ""
+          }
+        </div>
+      </div>
+      <p class="archive-muted mt-3 text-base leading-7">${project.summary}</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        ${tagList(project.methods || [], "archive-method-tag")}
+      </div>
+      <div class="mt-2 flex flex-wrap gap-2">
+        ${tagList(project.tools || [], "archive-tag")}
+      </div>
+      <div class="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold">
+        ${
+          project.repoLink
+            ? `<a class="archive-link" href="${project.repoLink}" target="_blank" rel="noopener noreferrer">GitHub repo</a>`
+            : ""
+        }
+        ${
+          project.deploymentLink
+            ? `<a class="archive-link" href="${project.deploymentLink}" target="_blank" rel="noopener noreferrer">${project.deploymentTitle || "Live project"}</a>`
+            : ""
+        }
+        ${
+          project.reflectionLink
+            ? `<a class="archive-link" href="${project.reflectionLink}">${project.reflectionTitle || "Read reflection"}</a>`
+            : ""
+        }
+      </div>
+    </article>
+  `;
+}
+
+function projectSection(title, description, projects, compact = false) {
+  return `
+    <section>
+      <div class="mb-6">
+        <p class="text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">${description}</p>
+        <h2 class="archive-heading mt-2 text-3xl font-bold">${title}</h2>
+      </div>
+      <div class="${compact ? "grid gap-4 md:grid-cols-2" : "space-y-4"}">
+        ${projects.map(archiveProjectCard).join("")}
+      </div>
+    </section>
+  `;
+}
+
 const projectsList = document.getElementById("projects-list");
 
 if (projectsList) {
   const archiveLayout = projectsList.dataset.layout === "archive";
 
-  projectsList.innerHTML = portfolio.projects
+  if (archiveLayout) {
+    const featuredProjects = portfolio.projects.filter((project) => project.featured);
+    const additionalProjects = portfolio.projects.filter((project) => !project.featured);
+
+    projectsList.innerHTML = [
+      projectSection("Featured Work", "Selected projects", featuredProjects),
+      projectSection("Additional Work", "More projects and works in progress", additionalProjects, true),
+    ].join("");
+  } else {
+    projectsList.innerHTML = portfolio.projects
+    .filter((project) => !project.placeholder)
+    .slice(0, 4)
     .map(
-      (project) => archiveLayout
-        ? `
-        <article class="archive-card-muted project-archive-row p-5 shadow-sm">
-          <div class="project-archive-side">
-            <a class="archive-link project-archive-cta text-sm font-semibold" href="${project.link}">View project</a>
-            ${
-              project.graphicSrc
-                ? `<a class="project-archive-thumbnail" href="${project.link}" aria-label="View ${project.title}">
-                    <img src="${project.graphicSrc}" alt="${project.graphicAlt || project.title}" />
-                  </a>`
-                : ""
-            }
-          </div>
-          <div class="project-archive-heading">
-            <div>
-              <h3 class="text-lg font-semibold">
-                <a class="archive-title hover:text-[var(--color-link-hover)]" href="${project.link}">${project.title}</a>
-              </h3>
-              ${
-                project.subtitle
-                  ? `<p class="archive-accent mt-1 text-xs font-semibold uppercase tracking-wider">${project.subtitle}</p>`
-                  : ""
-              }
-            </div>
-          </div>
-          <p class="archive-muted mt-3 text-base leading-7">${project.summary}</p>
-          <div class="mt-4 flex flex-wrap gap-2">
-            ${tagList(project.methods || [], "archive-method-tag")}
-          </div>
-          <div class="mt-2 flex flex-wrap gap-2">
-            ${tagList(project.tools || [], "archive-tag")}
-          </div>
-          <div class="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold">
-            ${
-              project.repoLink
-                ? `<a class="archive-link" href="${project.repoLink}" target="_blank" rel="noopener noreferrer">GitHub repo</a>`
-                : ""
-            }
-            ${
-              project.reflectionLink
-                ? `<a class="archive-link" href="${project.reflectionLink}">${project.reflectionTitle || "Read reflection"}</a>`
-                : ""
-            }
-          </div>
-        </article>
-      `
-        : `
+      (project) => `
         <article class="archive-card-muted rounded-lg p-5 shadow-sm">
           ${projectGraphic(project)}
           <h3 class="text-lg font-semibold">
@@ -257,6 +328,11 @@ if (projectsList) {
                 : ""
               }
               ${
+              project.deploymentLink
+                ? `<a class="archive-link" href="${project.deploymentLink}" target="_blank" rel="noopener noreferrer">${project.deploymentTitle || "Live project"}</a>`
+                : ""
+              }
+              ${
               project.reflectionLink
                 ? `<a class="archive-link" href="${project.reflectionLink}">${project.reflectionTitle || "Read reflection"}</a>`
                 : ""
@@ -266,6 +342,7 @@ if (projectsList) {
       `
     )
     .join("");
+  }
 }
 
 function skillCard(group) {
@@ -297,6 +374,26 @@ if (skillsList) {
     </div>
     ${remainingSkills.map(skillCard).join("")}
   `;
+}
+
+function certificationCard(certification) {
+  return `
+    <article class="archive-card rounded-lg p-5 shadow-sm">
+      <p class="archive-accent text-xs font-semibold uppercase tracking-wider">${certification.issuer}</p>
+      <h3 class="archive-title mt-2 text-lg font-semibold">${certification.title}</h3>
+      <a class="archive-link mt-4 inline-block text-sm font-semibold" href="${certification.credentialUrl}" target="_blank" rel="noopener noreferrer">
+        Certificates
+      </a>
+    </article>
+  `;
+}
+
+const certificationsList = document.getElementById("certifications-list");
+
+if (certificationsList) {
+  certificationsList.innerHTML = portfolio.certifications
+    .map(certificationCard)
+    .join("");
 }
 
 function experienceParagraphs(description) {
