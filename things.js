@@ -17,14 +17,14 @@ const portfolio = {
       graphicAlt: "Map of Denver's accidents",
     },
     {
-      title: "Museam piece Database [in progress]",
+      title: "Museum piece Database [in progress]",
       featured: true,
-      subtitle: "Database and Schema for artwork from select Museams for analysis",
+      subtitle: "Database and Schema for artwork from select Museums for analysis",
       summary:
-        "Building a relational database using PostGreSQL for museam artwork",
+        "Building a relational database using PostGreSQL for museum artwork",
       methods: ["Database management"],
       tools: ["SQL", "Python", "API"],
-      link: "projects/museam.html",
+      link: "projects/museum.html",
       repoLink: "https://github.com/lily-harper/artworks_database",
       graphicLabel: "Dashboard preview",
       graphicSrc: "assets/project_cards/data_model.png",
@@ -128,6 +128,12 @@ const portfolio = {
       issuer: "IBM",
       credentialUrl:
         "https://www.coursera.org/account/accomplishments/specialization/6GMYO3NR1V8X",
+    },
+    {
+      title: "AWS Certified AI Practitioner",
+      issuer: "Amazon Web Services",
+      credentialUrl:
+        "https://www.credly.com/badges/b3bd2a13-923a-45c8-96f3-736c7da09073/linked_in_profile",
     },
   ],
   experience: [
@@ -382,7 +388,7 @@ function certificationCard(certification) {
       <p class="archive-accent text-xs font-semibold uppercase tracking-wider">${certification.issuer}</p>
       <h3 class="archive-title mt-2 text-lg font-semibold">${certification.title}</h3>
       <a class="archive-link mt-4 inline-block text-sm font-semibold" href="${certification.credentialUrl}" target="_blank" rel="noopener noreferrer">
-        Certificates
+        View credential
       </a>
     </article>
   `;
