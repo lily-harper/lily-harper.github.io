@@ -118,6 +118,14 @@ const portfolio = {
   ],
   certifications: [
     {
+      title: "AWS Certified AI Practitioner",
+      issuer: "Amazon Web Services",
+      credentialUrl:
+        "https://www.credly.com/badges/b3bd2a13-923a-45c8-96f3-736c7da09073/linked_in_profile",
+    },
+  ],
+  certificates: [
+    {
       title: "IBM Data Analyst",
       issuer: "IBM",
       credentialUrl:
@@ -128,12 +136,6 @@ const portfolio = {
       issuer: "IBM",
       credentialUrl:
         "https://www.coursera.org/account/accomplishments/specialization/6GMYO3NR1V8X",
-    },
-    {
-      title: "AWS Certified AI Practitioner",
-      issuer: "Amazon Web Services",
-      credentialUrl:
-        "https://www.credly.com/badges/b3bd2a13-923a-45c8-96f3-736c7da09073/linked_in_profile",
     },
   ],
   experience: [
@@ -302,9 +304,30 @@ if (projectsList) {
   if (archiveLayout) {
     const featuredProjects = portfolio.projects.filter((project) => project.featured);
     const additionalProjects = portfolio.projects.filter((project) => !project.featured);
+    const academicWork = [
+      {
+        title: "History Essay",
+        subtitle: "Coming soon",
+        summary: "A selected history essay will appear here.",
+        placeholder: true,
+      },
+      {
+        title: "Undergraduate Thesis",
+        subtitle: "Coming soon",
+        summary: "My undergraduate thesis will appear here.",
+        placeholder: true,
+      },
+      {
+        title: "Graduate Projects",
+        subtitle: "Coming soon",
+        summary: "Selected graduate-level projects will appear here.",
+        placeholder: true,
+      },
+    ];
 
     projectsList.innerHTML = [
       projectSection("Featured Work", "Selected projects", featuredProjects),
+      projectSection("Academic Work", "Essays, research, and coursework", academicWork, true),
       projectSection("Additional Work", "More projects and works in progress", additionalProjects, true),
     ].join("");
   } else {
@@ -382,13 +405,13 @@ if (skillsList) {
   `;
 }
 
-function certificationCard(certification) {
+function credentialCard(item, linkLabel) {
   return `
     <article class="archive-card rounded-lg p-5 shadow-sm">
-      <p class="archive-accent text-xs font-semibold uppercase tracking-wider">${certification.issuer}</p>
-      <h3 class="archive-title mt-2 text-lg font-semibold">${certification.title}</h3>
-      <a class="archive-link mt-4 inline-block text-sm font-semibold" href="${certification.credentialUrl}" target="_blank" rel="noopener noreferrer">
-        View credential
+      <p class="archive-accent text-xs font-semibold uppercase tracking-wider">${item.issuer}</p>
+      <h3 class="archive-title mt-2 text-lg font-semibold">${item.title}</h3>
+      <a class="archive-link mt-4 inline-block text-sm font-semibold" href="${item.credentialUrl}" target="_blank" rel="noopener noreferrer">
+        ${linkLabel}
       </a>
     </article>
   `;
@@ -398,7 +421,15 @@ const certificationsList = document.getElementById("certifications-list");
 
 if (certificationsList) {
   certificationsList.innerHTML = portfolio.certifications
-    .map(certificationCard)
+    .map((item) => credentialCard(item, "View certification"))
+    .join("");
+}
+
+const certificatesList = document.getElementById("certificates-list");
+
+if (certificatesList) {
+  certificatesList.innerHTML = portfolio.certificates
+    .map((item) => credentialCard(item, "View certificate"))
     .join("");
 }
 

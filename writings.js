@@ -8,6 +8,7 @@ const writings = [
     excerpt:
       "The gap between real-world plausibility and predictive value.",
     link: "writings/superunknown.html",
+    projectLink: "projects/accident-injury-classifier.html",
   },
   {
     titleHtml: "<i>Can</i> Soul Meets Body meet NLP?",
@@ -16,8 +17,9 @@ const writings = [
     date: "June 2026",
     datetime: "2026-06",
     excerpt:
-      "I wanted to use NLP to learn about a band, but a band taught me about NLP: sentiment analysis, clustering assumptions, and what gets lost in computational.",
+      "I wanted to use NLP to learn about a band, but a band taught me about NLP: sentiment analysis, clustering assumptions, and what could get lost in computational methods.",
     link: "writings/soul-meets-body-nlp.html",
+    projectLink: "projects/soul-meets-body-nlp.html",
   },
   {
     title: "Reading Notes on Data and Culture",
@@ -55,7 +57,10 @@ function writingCard(post) {
       </div>
       <p class="archive-muted mt-1 text-sm">${post.meta}</p>
       <p class="archive-muted mt-4 text-base leading-7">${post.excerpt}</p>
-      <a class="archive-link mt-5 inline-block text-sm font-semibold" href="${post.link}">Read essay</a>
+      <div class="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
+        <a class="archive-link" href="${post.link}">Read essay</a>
+        ${post.projectLink ? `<a class="archive-link" href="${post.projectLink}">View project</a>` : ""}
+      </div>
     </article>
   `;
 }

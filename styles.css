@@ -24,7 +24,11 @@ html {
 }
 
 body {
-  background: var(--color-page);
+  background-color: var(--color-page);
+  background-image:
+    linear-gradient(rgba(120, 90, 50, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 90, 50, 0.045) 1px, transparent 1px);
+  background-size: 24px 24px;
   color: var(--color-text);
   display: flex;
   flex-direction: column;
@@ -43,6 +47,35 @@ main {
   flex: 1;
 }
 
+/* The Massachusetts Bay colony map sits behind the writings without moving the cards. */
+.writings-archive {
+  overflow: hidden;
+  position: relative;
+}
+
+.writings-archive::before {
+  background: url("assets/massachusetts-bay-1780.jpg") center top / 100% auto no-repeat;
+  content: "";
+  filter: grayscale(1);
+  inset: 0 0 0 auto;
+  mask-image: linear-gradient(135deg, transparent, #000 68%);
+  mix-blend-mode: multiply;
+  opacity: 0.24;
+  pointer-events: none;
+  position: absolute;
+  width: min(113.65vw, 116.42rem);
+}
+
+.writings-archive #writings-list {
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .writings-archive::before {
+    opacity: 0.18;
+  }
+}
+
 a {
   text-underline-offset: 0.2em;
 }
@@ -53,10 +86,14 @@ summary:focus-visible {
   outline-offset: 3px;
 }
 
-/* One continuous canvas */
+/* Let the faint graph paper show between solid content surfaces. */
+main > section {
+  background: transparent !important;
+}
+
+/* Keep cards and navigation opaque so grid lines stay behind them. */
 header,
 footer,
-main > section,
 .archive-card,
 .archive-card-muted,
 .archive-tag,
@@ -135,6 +172,10 @@ body > header nav > div a.font-semibold {
   line-height: 0.98 !important;
   max-width: 60rem;
   text-wrap: balance;
+}
+
+.index-hero-heading {
+  letter-spacing: -0.04em;
 }
 
 .archive-heading {
