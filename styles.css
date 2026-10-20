@@ -178,6 +178,12 @@ body > header nav > div a.font-semibold {
   letter-spacing: -0.04em;
 }
 
+.home-hero > p,
+.home-hero > p *,
+.home-hero > div a {
+  letter-spacing: 0.02em;
+}
+
 .archive-heading {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 750 !important;

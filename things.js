@@ -220,16 +220,6 @@ function projectGraphic(project) {
 }
 
 function archiveProjectCard(project) {
-  if (project.placeholder) {
-    return `
-      <article class="archive-card-muted project-archive-row p-5 shadow-sm">
-        <h3 class="text-lg font-semibold archive-title">${project.title}</h3>
-        <p class="archive-accent mt-1 text-xs font-semibold uppercase tracking-wider">${project.subtitle}</p>
-        <p class="archive-muted mt-3 text-base leading-7">${project.summary}</p>
-      </article>
-    `;
-  }
-
   return `
     <article class="archive-card-muted project-archive-row p-5 shadow-sm">
       <div class="project-archive-side">
@@ -304,30 +294,8 @@ if (projectsList) {
   if (archiveLayout) {
     const featuredProjects = portfolio.projects.filter((project) => project.featured);
     const additionalProjects = portfolio.projects.filter((project) => !project.featured);
-    const academicWork = [
-      {
-        title: "History Essay",
-        subtitle: "Coming soon",
-        summary: "A selected history essay will appear here.",
-        placeholder: true,
-      },
-      {
-        title: "Undergraduate Thesis",
-        subtitle: "Coming soon",
-        summary: "My undergraduate thesis will appear here.",
-        placeholder: true,
-      },
-      {
-        title: "Graduate Projects",
-        subtitle: "Coming soon",
-        summary: "Selected graduate-level projects will appear here.",
-        placeholder: true,
-      },
-    ];
-
     projectsList.innerHTML = [
       projectSection("Featured Work", "Selected projects", featuredProjects),
-      projectSection("Academic Work", "Essays, research, and coursework", academicWork, true),
       projectSection("Additional Work", "More projects and works in progress", additionalProjects, true),
     ].join("");
   } else {
