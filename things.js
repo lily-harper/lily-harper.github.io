@@ -18,6 +18,7 @@ const portfolio = {
     },
     {
       title: "Museum piece Database [in progress]",
+      hidden: true,
       featured: true,
       subtitle: "Database and Schema for artwork from select Museums for analysis",
       summary:
@@ -48,6 +49,7 @@ const portfolio = {
     },
     {
       title: "Portfolio",
+      hidden: true,
       subtitle: "This website itself",
       summary:
         "Self marketing where signal persists over noise (hopefully)",
@@ -60,6 +62,7 @@ const portfolio = {
     },
     {
       title: "Bon Iver Everywhere",
+      hidden: true,
       subtitle: "Interactive collaboration network",
       summary:
         "Explore Bon Iver's direct collaborators and the wider musical network around them.",
@@ -96,11 +99,11 @@ const portfolio = {
     items: [
       "Exploratory data analysis",
       "Regression",
-      "Classification",
       "Clustering",
-      "Dimensionality reduction",
+      "Classification",
       "Natural language processing basics",
       "Model evaluation",
+      "Dimensionality reduction",
     ],
   },
   {
@@ -112,6 +115,7 @@ const portfolio = {
       "LaTeX",
       "VS Code",
       "DBeaver",
+      "AWS (S3, EC2, Bedrock)",
       "AI-assisted coding workflows",
     ],
     },
@@ -145,7 +149,7 @@ const portfolio = {
       organization: "University of Colorado-Boulder, College of Engineering and Applied Sciences",
       date: "August 2025-May 2027 (expected)",
       description: [
-        "Coursework in statistical methods and applications, data mining, and computer science.",
+        "Coursework in statistical methods and applications, data mining, and machine learning.",
         "Membership in Data Science Student Association (DaSSA) and the Colorado Data Science Team"
       ],
     },
@@ -155,15 +159,16 @@ const portfolio = {
       organization: "University of Nebraska-Lincoln, College of Arts and Sciences",
       date: "August 2020- May 2024",
       description: [
-        "Coursework in economics, introductory econometrics, and history. Minor in Art History & Criticism.",
-        "I also completed an undergraduate thesis in economics that drew on methods and ideas of behavioral economics. For fulfillment of a degree in history, I completed a capstone centered on consumption and labor in the late 20th century United States.",
+        "Coursework in economics and history, with supporting coursework in math and introductory econometrics. Minor in Art History & Criticism.",
+        "I also completed an undergraduate thesis in economics that drew on methods and ideas of behavioral economics.",
+        "For fulfillment of a degree in history, I completed a capstone centered on the physical evidence of the relationship between consumption and labor in the late 20th century United States.",
       ],
     },
     {
       type: "experience",
       role: "Data Specialist - Contract",
       organization: "Polco / NRC",
-      date: "September 2025-Dececember 2025",
+      date: "October 2025-Dececember 2025",
       description:[
         "Researched, categorized, and completed data entry tasks in Excel to inform stakeholders and support improvements to Boulder's Transportation Master Plan",
         "Collaborated to compile datasets on businesses in Boulder Valley for completeness and to improve usability"],
@@ -176,6 +181,16 @@ const portfolio = {
       description:[
         "Analyzed survey data and produced visualizations to support internal and external evaluations",
         "Generated descriptive statistics and preliminary insights"
+      ],
+    },
+    {
+      type: "experience",
+      role: "Teaching Assistant / Learning Assistant",
+      organization: "College of Business Teaching and Learning Center, Lincoln, NE",
+      date: "January 2023-December 2023",
+      description: [
+        "Tutored students in introductory in-person and online microeconomics and macroeconomics courses with up to 300 students per section, leading review sessions and providing one-on-one and group tutoring.",
+        "Served as the teaching assistant for an upper-level Labor Economics course, grading assignments and exams and supporting exam administration.",
       ],
     },
   ],
@@ -290,16 +305,17 @@ const projectsList = document.getElementById("projects-list");
 
 if (projectsList) {
   const archiveLayout = projectsList.dataset.layout === "archive";
+  const visibleProjects = portfolio.projects.filter((project) => !project.hidden);
 
   if (archiveLayout) {
-    const featuredProjects = portfolio.projects.filter((project) => project.featured);
-    const additionalProjects = portfolio.projects.filter((project) => !project.featured);
+    const featuredProjects = visibleProjects.filter((project) => project.featured);
+    const additionalProjects = visibleProjects.filter((project) => !project.featured);
     projectsList.innerHTML = [
       projectSection("Featured Work", "Selected projects", featuredProjects),
       projectSection("Additional Work", "More projects and works in progress", additionalProjects, true),
     ].join("");
   } else {
-    projectsList.innerHTML = portfolio.projects
+    projectsList.innerHTML = visibleProjects
     .filter((project) => !project.placeholder)
     .slice(0, 4)
     .map(
