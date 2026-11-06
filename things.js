@@ -146,22 +146,21 @@ const portfolio = {
     {
       type: "education",
       role: "M.S. Data Science",
-      organization: "University of Colorado-Boulder, College of Engineering and Applied Sciences",
+      organization: "University of Colorado Boulder, College of Engineering and Applied Sciences",
       date: "August 2025-May 2027 (expected)",
       description: [
         "Coursework in statistical methods and applications, data mining, and machine learning.",
-        "Membership in Data Science Student Association (DaSSA) and the Colorado Data Science Team"
       ],
     },
     {
       type: "education",
       role: "B.A. Economics & History",
       organization: "University of Nebraska-Lincoln, College of Arts and Sciences",
-      date: "August 2020- May 2024",
+      date: "August 2020-May 2024",
       description: [
         "Coursework in economics and history, with supporting coursework in math and introductory econometrics. Minor in Art History & Criticism.",
         "I also completed an undergraduate thesis in economics that drew on methods and ideas of behavioral economics.",
-        "For fulfillment of a degree in history, I completed a capstone centered on the physical evidence of the relationship between consumption and labor in the late 20th century United States.",
+        "For fulfillment of a degree in history, I completed a capstone centered on the relationship between consumption and labor in the late 20th century United States.",
       ],
     },
     {
@@ -309,11 +308,7 @@ if (projectsList) {
 
   if (archiveLayout) {
     const featuredProjects = visibleProjects.filter((project) => project.featured);
-    const additionalProjects = visibleProjects.filter((project) => !project.featured);
-    projectsList.innerHTML = [
-      projectSection("Featured Work", "Selected projects", featuredProjects),
-      projectSection("Additional Work", "More projects and works in progress", additionalProjects, true),
-    ].join("");
+    projectsList.innerHTML = projectSection("Featured Work", "Selected projects", featuredProjects);
   } else {
     projectsList.innerHTML = visibleProjects
     .filter((project) => !project.placeholder)
@@ -444,7 +439,7 @@ function experienceGroup(title, type) {
   const items = portfolio.experience.filter((item) => item.type === type);
 
   return `
-    <section>
+    <section id="${type === "education" ? "education" : "experience"}">
       <h2 class="archive-heading text-3xl font-bold">${title}</h2>
       <div class="mt-4 space-y-4">
         ${items.map(experienceCard).join("")}
