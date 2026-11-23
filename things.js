@@ -19,7 +19,8 @@ const portfolio = {
     {
       title: "Museum piece Database [in progress]",
       hidden: true,
-      featured: true,
+      featured: false,
+      showViewLink: false,
       subtitle: "Database and Schema for artwork from select Museums for analysis",
       summary:
         "Building a relational database using PostGreSQL for museum artwork",
@@ -48,30 +49,40 @@ const portfolio = {
       graphicAlt: "Sentiment per year",
     },
     {
-      title: "Portfolio",
-      hidden: true,
-      subtitle: "This website itself",
-      summary:
-        "Self marketing where signal persists over noise (hopefully)",
-      methods: ["Basic web design"],
-      tools: ["HTML", "CSS", "JavaScript", "Codex"],
-      link: "projects/portfolio.html",
-      graphicLabel: "Classifier results",
-      graphicSrc: "assets/project_cards/portfolio.png",
-      graphicAlt: "screenshot of my portfolio",
-    },
-    {
       title: "Bon Iver Everywhere",
       hidden: true,
+      showViewLink: true,
       subtitle: "Interactive collaboration network",
       summary:
         "Explore Bon Iver's direct collaborators and the wider musical network around them.",
       methods: ["Network analysis", "Data visualization", "Graph exploration"],
       tools: ["Python", "Plotly", "JavaScript"],
       link: "projects/bon-iver-everywhere.html",
+      repoLink: "https://github.com/lily-harper/bon-iver-everywhere", 
       deploymentLink: "https://lilyholmes.dev/bon-iver-everywhere/",
       deploymentTitle: "Live visualization",
       graphicLabel: "Collaboration network",
+    },
+    {
+      title: "Bean Search",
+      hidden: true,
+      showViewLink: false,
+      summary:
+        "beaM search (limited BFS) + Dijkstra's to collect the most beaNs in N moves (beantown and the bean included)",
+      methods: ["Algorithms"],
+      tools: ["Python", "NetworkX"],
+      repoLink: "https://github.com/lily-harper/bean_search",
+    },
+    {
+      title: "SUS: Screening Unverified Speedruns",
+      hidden: true,
+      showViewLink: false,
+      subtitle: "A triage system for speedrun review  -> CSCI5622 (ML)",
+      summary:
+        "beaM search (limited BFS) + Dijkstra's to collect the most beaNs in N moves (beantown and the bean included)",
+      methods: ["Algorithms"],
+      tools: ["Python", "NetworkX"],
+    repoLink: "https://github.com/lily-harper/bean_search",
     },
   ],
   skills: [
@@ -103,7 +114,6 @@ const portfolio = {
       "Classification",
       "Natural language processing basics",
       "Model evaluation",
-      "Dimensionality reduction",
     ],
   },
   {
@@ -113,7 +123,6 @@ const portfolio = {
       "Git/GitHub",
       "Jupyter",
       "LaTeX",
-      "VS Code",
       "DBeaver",
       "AWS (S3, EC2, Bedrock)",
       "AI-assisted coding workflows",
@@ -237,7 +246,7 @@ function archiveProjectCard(project) {
   return `
     <article class="archive-card-muted project-archive-row p-5 shadow-sm">
       <div class="project-archive-side">
-        <a class="archive-link project-archive-cta text-sm font-semibold" href="${project.link}">View project</a>
+        ${project.showViewLink !== false ? `<a class="archive-link project-archive-cta text-sm font-semibold" href="${project.link}">View project</a>` : ""}
         ${
           project.graphicSrc
             ? `<a class="project-archive-thumbnail" href="${project.link}" aria-label="View ${project.title}">
@@ -251,11 +260,7 @@ function archiveProjectCard(project) {
           <h3 class="text-lg font-semibold">
             <a class="archive-title hover:text-[var(--color-link-hover)]" href="${project.link}">${project.title}</a>
           </h3>
-          ${
-            project.subtitle
-              ? `<p class="archive-accent mt-1 text-xs font-semibold uppercase tracking-wider">${project.subtitle}</p>`
-              : ""
-          }
+          ${project.subtitle ? `<p class="archive-accent mt-1 text-xs font-semibold uppercase tracking-wider">${project.subtitle}</p>` : ""}
         </div>
       </div>
       <p class="archive-muted mt-3 text-base leading-7">${project.summary}</p>
@@ -307,8 +312,12 @@ if (projectsList) {
   const visibleProjects = portfolio.projects.filter((project) => !project.hidden);
 
   if (archiveLayout) {
-    const featuredProjects = visibleProjects.filter((project) => project.featured);
-    projectsList.innerHTML = projectSection("Featured Work", "Selected projects", featuredProjects);
+    const featuredProjects = portfolio.projects.filter((project) => project.featured);
+    const otherProjects = portfolio.projects.filter((project) => !project.featured);
+    projectsList.innerHTML = [
+      projectSection("My Work", "Selected projects", featuredProjects),
+      projectSection("Other Projects", "More work", otherProjects, true),
+    ].join("");
   } else {
     projectsList.innerHTML = visibleProjects
     .filter((project) => !project.placeholder)
@@ -329,7 +338,7 @@ if (projectsList) {
           ${chipSection("Methods", project.methods, "archive-method-tag")}
           ${chipSection("Tools", project.tools, "archive-tag")}
           <div class="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold">
-            <a class="archive-link" href="${project.link}">View project</a>
+            ${project.showViewLink !== false ? `<a class="archive-link" href="${project.link}">View project</a>` : ""}
             ${
               project.repoLink
                 ? `<a class="archive-link" href="${project.repoLink}" target="_blank" rel="noopener noreferrer">GitHub repo</a>`

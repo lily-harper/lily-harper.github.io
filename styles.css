@@ -299,6 +299,12 @@ main > section {
   flex-shrink: 0;
 }
 
+.project-archive-actions {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+}
+
 .project-archive-side {
   align-items: flex-end;
   display: flex;
